@@ -1,0 +1,1787 @@
+{
+  "completed_fbs": [],
+  "completed_fcs": [],
+  "coaches_fbs": [
+    {
+      "name": "Bill O'Brien",
+      "position": "Head Coach",
+      "school": "Boston College",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Justin Wilcox",
+      "position": "Head Coach",
+      "school": "California",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Dabo Swinney",
+      "position": "Head Coach",
+      "school": "Clemson",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Manny Diaz",
+      "position": "Head Coach",
+      "school": "Duke",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Norvell",
+      "position": "Head Coach",
+      "school": "Florida State",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Brent Key",
+      "position": "Head Coach",
+      "school": "Georgia Tech",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Brohm",
+      "position": "Head Coach",
+      "school": "Louisville",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Mario Cristobal",
+      "position": "Head Coach",
+      "school": "Miami",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Dave Doeren",
+      "position": "Head Coach",
+      "school": "NC State",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Bill Belichick",
+      "position": "Head Coach",
+      "school": "North Carolina",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Pat Narduzzi",
+      "position": "Head Coach",
+      "school": "Pittsburgh",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Rhett Lashlee",
+      "position": "Head Coach",
+      "school": "SMU",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Troy Taylor",
+      "position": "Head Coach",
+      "school": "Stanford",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Fran Brown",
+      "position": "Head Coach",
+      "school": "Syracuse",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Tony Elliott",
+      "position": "Head Coach",
+      "school": "Virginia",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Brent Pry",
+      "position": "Head Coach",
+      "school": "Virginia Tech",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Dave Clawson",
+      "position": "Head Coach",
+      "school": "Wake Forest",
+      "conference": "ACC",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Monken",
+      "position": "Head Coach",
+      "school": "Army",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Biff Poggi",
+      "position": "Head Coach",
+      "school": "Charlotte",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Houston",
+      "position": "Head Coach",
+      "school": "East Carolina",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Tom Herman",
+      "position": "Head Coach",
+      "school": "Florida Atlantic",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Ryan Silverfield",
+      "position": "Head Coach",
+      "school": "Memphis",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Brian Newberry",
+      "position": "Head Coach",
+      "school": "Navy",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Eric Morris",
+      "position": "Head Coach",
+      "school": "North Texas",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Bloomgren",
+      "position": "Head Coach",
+      "school": "Rice",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Alex Golesh",
+      "position": "Head Coach",
+      "school": "South Florida",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Stan Drayton",
+      "position": "Head Coach",
+      "school": "Temple",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Jon Sumrall",
+      "position": "Head Coach",
+      "school": "Tulane",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Kevin Wilson",
+      "position": "Head Coach",
+      "school": "Tulsa",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Trent Dilfer",
+      "position": "Head Coach",
+      "school": "UAB",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Traylor",
+      "position": "Head Coach",
+      "school": "UTSA",
+      "conference": "American",
+      "division": "FBS"
+    },
+    {
+      "name": "Brent Brennan",
+      "position": "Head Coach",
+      "school": "Arizona",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Kenny Dillingham",
+      "position": "Head Coach",
+      "school": "Arizona State",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Dave Aranda",
+      "position": "Head Coach",
+      "school": "Baylor",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Kalani Sitake",
+      "position": "Head Coach",
+      "school": "BYU",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Scott Satterfield",
+      "position": "Head Coach",
+      "school": "Cincinnati",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Deion Sanders",
+      "position": "Head Coach",
+      "school": "Colorado",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Willie Fritz",
+      "position": "Head Coach",
+      "school": "Houston",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Matt Campbell",
+      "position": "Head Coach",
+      "school": "Iowa State",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Lance Leipold",
+      "position": "Head Coach",
+      "school": "Kansas",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Chris Klieman",
+      "position": "Head Coach",
+      "school": "Kansas State",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Gundy",
+      "position": "Head Coach",
+      "school": "Oklahoma State",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Sonny Dykes",
+      "position": "Head Coach",
+      "school": "TCU",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Joey McGuire",
+      "position": "Head Coach",
+      "school": "Texas Tech",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Gus Malzahn",
+      "position": "Head Coach",
+      "school": "UCF",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Kyle Whittingham",
+      "position": "Head Coach",
+      "school": "Utah",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Neal Brown",
+      "position": "Head Coach",
+      "school": "West Virginia",
+      "conference": "Big 12",
+      "division": "FBS"
+    },
+    {
+      "name": "Bret Bielema",
+      "position": "Head Coach",
+      "school": "Illinois",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Curt Cignetti",
+      "position": "Head Coach",
+      "school": "Indiana",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Kirk Ferentz",
+      "position": "Head Coach",
+      "school": "Iowa",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Locksley",
+      "position": "Head Coach",
+      "school": "Maryland",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Sherrone Moore",
+      "position": "Head Coach",
+      "school": "Michigan",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Jonathan Smith",
+      "position": "Head Coach",
+      "school": "Michigan State",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "P.J. Fleck",
+      "position": "Head Coach",
+      "school": "Minnesota",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Matt Rhule",
+      "position": "Head Coach",
+      "school": "Nebraska",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "David Braun",
+      "position": "Head Coach",
+      "school": "Northwestern",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Ryan Day",
+      "position": "Head Coach",
+      "school": "Ohio State",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Dan Lanning",
+      "position": "Head Coach",
+      "school": "Oregon",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "James Franklin",
+      "position": "Head Coach",
+      "school": "Penn State",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Ryan Walters",
+      "position": "Head Coach",
+      "school": "Purdue",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Greg Schiano",
+      "position": "Head Coach",
+      "school": "Rutgers",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "DeShaun Foster",
+      "position": "Head Coach",
+      "school": "UCLA",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Lincoln Riley",
+      "position": "Head Coach",
+      "school": "USC",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Jedd Fisch",
+      "position": "Head Coach",
+      "school": "Washington",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Luke Fickell",
+      "position": "Head Coach",
+      "school": "Wisconsin",
+      "conference": "Big Ten",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike MacIntyre",
+      "position": "Head Coach",
+      "school": "FIU",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Rich Rodriguez",
+      "position": "Head Coach",
+      "school": "Jacksonville State",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Brian Bohannon",
+      "position": "Head Coach",
+      "school": "Kennesaw State",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Jamey Chadwell",
+      "position": "Head Coach",
+      "school": "Liberty",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Sonny Cumbie",
+      "position": "Head Coach",
+      "school": "Louisiana Tech",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Derek Mason",
+      "position": "Head Coach",
+      "school": "Middle Tennessee",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Tony Sanchez",
+      "position": "Head Coach",
+      "school": "New Mexico State",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "K.C. Keeler",
+      "position": "Head Coach",
+      "school": "Sam Houston",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Scotty Walden",
+      "position": "Head Coach",
+      "school": "UTEP",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Tyson Helton",
+      "position": "Head Coach",
+      "school": "Western Kentucky",
+      "conference": "Conference USA",
+      "division": "FBS"
+    },
+    {
+      "name": "Marcus Freeman",
+      "position": "Head Coach",
+      "school": "Notre Dame",
+      "conference": "Independent",
+      "division": "FBS"
+    },
+    {
+      "name": "Jim Mora Jr.",
+      "position": "Head Coach",
+      "school": "UConn",
+      "conference": "Independent",
+      "division": "FBS"
+    },
+    {
+      "name": "Don Brown",
+      "position": "Head Coach",
+      "school": "UMass",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Troy Calhoun",
+      "position": "Head Coach",
+      "school": "Air Force",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Spencer Danielson",
+      "position": "Head Coach",
+      "school": "Boise State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Jay Norvell",
+      "position": "Head Coach",
+      "school": "Colorado State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Tedford",
+      "position": "Head Coach",
+      "school": "Fresno State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Timmy Chang",
+      "position": "Head Coach",
+      "school": "Hawaii",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Choate",
+      "position": "Head Coach",
+      "school": "Nevada",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Bronco Mendenhall",
+      "position": "Head Coach",
+      "school": "New Mexico",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Sean Lewis",
+      "position": "Head Coach",
+      "school": "San Diego State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Ken Niumatalolo",
+      "position": "Head Coach",
+      "school": "San Jose State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Barry Odom",
+      "position": "Head Coach",
+      "school": "UNLV",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Nate Dreiling",
+      "position": "Head Coach",
+      "school": "Utah State",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Jay Sawvel",
+      "position": "Head Coach",
+      "school": "Wyoming",
+      "conference": "Mountain West",
+      "division": "FBS"
+    },
+    {
+      "name": "Joe Moorhead",
+      "position": "Head Coach",
+      "school": "Akron",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Neu",
+      "position": "Head Coach",
+      "school": "Ball State",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Scot Loeffler",
+      "position": "Head Coach",
+      "school": "Bowling Green",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Pete Lembo",
+      "position": "Head Coach",
+      "school": "Buffalo",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Jim McElwain",
+      "position": "Head Coach",
+      "school": "Central Michigan",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Chris Creighton",
+      "position": "Head Coach",
+      "school": "Eastern Michigan",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Kenni Burns",
+      "position": "Head Coach",
+      "school": "Kent State",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Chuck Martin",
+      "position": "Head Coach",
+      "school": "Miami (OH)",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Thomas Hammock",
+      "position": "Head Coach",
+      "school": "Northern Illinois",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Tim Albin",
+      "position": "Head Coach",
+      "school": "Ohio",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Jason Candle",
+      "position": "Head Coach",
+      "school": "Toledo",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Lance Taylor",
+      "position": "Head Coach",
+      "school": "Western Michigan",
+      "conference": "MAC",
+      "division": "FBS"
+    },
+    {
+      "name": "Trent Bray",
+      "position": "Head Coach",
+      "school": "Oregon State",
+      "conference": "Pac-12",
+      "division": "FBS"
+    },
+    {
+      "name": "Jake Dickert",
+      "position": "Head Coach",
+      "school": "Washington State",
+      "conference": "Pac-12",
+      "division": "FBS"
+    },
+    {
+      "name": "Kalen DeBoer",
+      "position": "Head Coach",
+      "school": "Alabama",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Sam Pittman",
+      "position": "Head Coach",
+      "school": "Arkansas",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Hugh Freeze",
+      "position": "Head Coach",
+      "school": "Auburn",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Billy Napier",
+      "position": "Head Coach",
+      "school": "Florida",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Kirby Smart",
+      "position": "Head Coach",
+      "school": "Georgia",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Mark Stoops",
+      "position": "Head Coach",
+      "school": "Kentucky",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Brian Kelly",
+      "position": "Head Coach",
+      "school": "LSU",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Jeff Lebby",
+      "position": "Head Coach",
+      "school": "Mississippi State",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Eli Drinkwitz",
+      "position": "Head Coach",
+      "school": "Missouri",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Brent Venables",
+      "position": "Head Coach",
+      "school": "Oklahoma",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Lane Kiffin",
+      "position": "Head Coach",
+      "school": "Ole Miss",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Shane Beamer",
+      "position": "Head Coach",
+      "school": "South Carolina",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Josh Heupel",
+      "position": "Head Coach",
+      "school": "Tennessee",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Steve Sarkisian",
+      "position": "Head Coach",
+      "school": "Texas",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Mike Elko",
+      "position": "Head Coach",
+      "school": "Texas A&M",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Clark Lea",
+      "position": "Head Coach",
+      "school": "Vanderbilt",
+      "conference": "SEC",
+      "division": "FBS"
+    },
+    {
+      "name": "Shawn Clark",
+      "position": "Head Coach",
+      "school": "Appalachian State",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Butch Jones",
+      "position": "Head Coach",
+      "school": "Arkansas State",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Tim Beck",
+      "position": "Head Coach",
+      "school": "Coastal Carolina",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Clay Helton",
+      "position": "Head Coach",
+      "school": "Georgia Southern",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Dell McGee",
+      "position": "Head Coach",
+      "school": "Georgia State",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Bob Chesney",
+      "position": "Head Coach",
+      "school": "James Madison",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Michael Desormeaux",
+      "position": "Head Coach",
+      "school": "Louisiana",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Charles Huff",
+      "position": "Head Coach",
+      "school": "Marshall",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Ricky Rahne",
+      "position": "Head Coach",
+      "school": "Old Dominion",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Major Applewhite",
+      "position": "Head Coach",
+      "school": "South Alabama",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Will Hall",
+      "position": "Head Coach",
+      "school": "Southern Miss",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "G.J. Kinne",
+      "position": "Head Coach",
+      "school": "Texas State",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Jon Sumrall",
+      "position": "Head Coach",
+      "school": "Troy",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    },
+    {
+      "name": "Bryant Vincent",
+      "position": "Head Coach",
+      "school": "ULM",
+      "conference": "Sun Belt",
+      "division": "FBS"
+    }
+  ],
+  "coaches_fcs": [
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Cal Poly",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Eastern Washington",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Idaho",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Idaho State",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Bobby Hauck",
+      "position": "Head Coach",
+      "school": "Montana",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Brent Vigen",
+      "position": "Head Coach",
+      "school": "Montana State",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Northern Arizona",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Northern Colorado",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Portland State",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Andy Thompson",
+      "position": "Head Coach",
+      "school": "Sacramento State",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "UC Davis",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Weber State",
+      "conference": "Big Sky",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Albany",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Bryant",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Campbell",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Elon",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Hampton",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Maine",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Monmouth",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "New Hampshire",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "North Carolina A&T",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Rhode Island",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Stony Brook",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Towson",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Mark Ferrante",
+      "position": "Head Coach",
+      "school": "Villanova",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "William & Mary",
+      "conference": "CAA",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Brown",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Columbia",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Cornell",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Dartmouth",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Harvard",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Penn",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Princeton",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Yale",
+      "conference": "Ivy",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Delaware State",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Howard",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Morgan State",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Norfolk State",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "North Carolina Central",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "South Carolina State",
+      "conference": "MEAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Illinois State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Indiana State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Murray State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "North Dakota",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Tim Polasek",
+      "position": "Head Coach",
+      "school": "North Dakota State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Northern Iowa",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "South Dakota",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Jimmy Rogers",
+      "position": "Head Coach",
+      "school": "South Dakota State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Southern Illinois",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Youngstown State",
+      "conference": "MVFC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Central Connecticut",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Duquesne",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "LIU",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Robert Morris",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Sacred Heart",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Wagner",
+      "conference": "NEC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Charleston Southern",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Eastern Illinois",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Eastern Kentucky",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Gardner-Webb",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Southeast Missouri State",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Tennessee State",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Tennessee Tech",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "UT Martin",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Western Illinois",
+      "conference": "OVC-Big South",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Bucknell",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Colgate",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Fordham",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Georgetown",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Holy Cross",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Lafayette",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Lehigh",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Richmond",
+      "conference": "Patriot",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Butler",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Davidson",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Dayton",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Drake",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Marist",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Morehead State",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Presbyterian",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "San Diego",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Stetson",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Valparaiso",
+      "conference": "PFL",
+      "division": "FCS"
+    },
+    {
+      "name": "Rusty Wright",
+      "position": "Head Coach",
+      "school": "Chattanooga",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "The Citadel",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "East Tennessee State",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Clay Hendrix",
+      "position": "Head Coach",
+      "school": "Furman",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Mercer",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Samford",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "VMI",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Western Carolina",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Wofford",
+      "conference": "SoCon",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "East Texas A&M",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Houston Christian",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "G.J. Kinne",
+      "position": "Head Coach",
+      "school": "Incarnate Word",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Lamar",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "McNeese",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Nicholls",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Northwestern State",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Southeastern Louisiana",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Stephen F. Austin",
+      "conference": "Southland",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Alabama A&M",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Alabama State",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Alcorn State",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Arkansas-Pine Bluff",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Bethune-Cookman",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Florida A&M",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Grambling State",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Jackson State",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Mississippi Valley State",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Prairie View A&M",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Southern",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Texas Southern",
+      "conference": "SWAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Abilene Christian",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Austin Peay",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Central Arkansas",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "North Alabama",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Southern Utah",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Tarleton State",
+      "conference": "UAC",
+      "division": "FCS"
+    },
+    {
+      "name": "Unknown",
+      "position": "Head Coach",
+      "school": "Utah Tech",
+      "conference": "UAC",
+      "division": "FCS"
+    }
+  ],
+  "last_run": "2026-01-29T08:20:20.292577"
+}
