@@ -1,0 +1,40 @@
+{
+  "generated": "2026-01-29T08:27:41.288857",
+  "primary_source": "USA Today Sports Data (sportsdata.usatoday.com)",
+  "data_date": "October 2025",
+  "note": "Salaries represent total compensation including base pay and guaranteed amounts",
+  "coverage": {
+    "total_coaches": 292,
+    "with_salary": 171,
+    "coverage_pct": 58.6
+  },
+  "breakdown": {
+    "fbs_head_coaches": {
+      "total": 134,
+      "with_salary": 133,
+      "coverage_pct": 99.3,
+      "total_salary": 543769667,
+      "avg_salary": 4088494
+    },
+    "coordinators": {
+      "total": 38,
+      "with_salary": 37,
+      "coverage_pct": 97.4,
+      "total_salary": 59837560,
+      "avg_salary": 1617231
+    },
+    "fcs_coaches": {
+      "total": 120,
+      "with_salary": 1,
+      "coverage_pct": 0.8,
+      "note": "FCS salaries generally not tracked by USA Today"
+    }
+  },
+  "missing_fbs_coaches": [
+    "Nate Dreiling (Utah State)"
+  ],
+  "sources_used": [
+    "USA Today Sports Data - Head Coach Salaries (Oct 2025)",
+    "USA Today Sports Data - Assistant/Coordinator Salaries (Oct 2025)"
+  ]
+}
