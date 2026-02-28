@@ -1,0 +1,35 @@
+[
+  {
+    "play_id": "opad-001",
+    "date": "2023-09-03",
+    "team": "LSU",
+    "opponent": "Florida State",
+    "description": "Trips right RPO glance for 14 yards.",
+    "tags": {
+      "concepts": ["RPO", "Glance"],
+      "players": ["Jayden Daniels", "Malik Nabers"]
+    }
+  },
+  {
+    "play_id": "opad-002",
+    "date": "2023-10-15",
+    "team": "Miami Dolphins",
+    "opponent": "Panthers",
+    "description": "Wide zone play-action shot over the middle.",
+    "tags": {
+      "concepts": ["Wide Zone", "Play Action"],
+      "players": ["Tua Tagovailoa", "Tyreek Hill"]
+    }
+  },
+  {
+    "play_id": "opad-003",
+    "date": "2023-11-11",
+    "team": "Kentucky",
+    "opponent": "Alabama",
+    "description": "Gun bunch RPO with the slot bubble tagged on the backside.",
+    "tags": {
+      "concepts": ["RPO", "Bubble"],
+      "players": ["Devin Leary", "Barion Brown"]
+    }
+  }
+]
