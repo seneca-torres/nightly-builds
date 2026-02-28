@@ -1,0 +1,26 @@
+[
+  {
+    "team": "LSU",
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-31",
+    "head_coach": "Brian Kelly",
+    "offensive_coordinator": "Mike Denbrock",
+    "coaching_tree": "Kelly tree"
+  },
+  {
+    "team": "Miami Dolphins",
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-31",
+    "head_coach": "Mike McDaniel",
+    "offensive_coordinator": "Frank Smith",
+    "coaching_tree": "Shanahan tree"
+  },
+  {
+    "team": "Kentucky",
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-31",
+    "head_coach": "Mark Stoops",
+    "offensive_coordinator": "Liam Coen",
+    "coaching_tree": "McVay/Shanahan orbit"
+  }
+]
