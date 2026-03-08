@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quick Task Logger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Quick Logger</h1>
+
+    <form id="log-form">
+      <label for="text">Entry</label>
+      <textarea id="text" name="text" rows="5" required placeholder="What happened / what to remember?"></textarea>
+
+      <label for="category">Category (optional)</label>
+      <select id="category" name="category">
+        <option value="">None</option>
+        <option value="event">event</option>
+        <option value="idea">idea</option>
+        <option value="todo">todo</option>
+      </select>
+
+      <button type="submit">Log Entry</button>
+      <p id="status" aria-live="polite"></p>
+    </form>
+
+    <section>
+      <h2>Recent Entries</h2>
+      <ul id="recent"></ul>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("log-form");
+    const textEl = document.getElementById("text");
+    const categoryEl = document.getElementById("category");
+    const statusEl = document.getElementById("status");
+    const recentEl = document.getElementById("recent");
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[ch]));
+    }
+
+    async function loadRecent() {
+      const res = await fetch("/entries");
+      const data = await res.json();
+      recentEl.innerHTML = "";
+
+      for (const e of data.entries) {
+        const li = document.createElement("li");
+        const cat = e.category ? ` (${escapeHtml(e.category)})` : "";
+        li.innerHTML = `<span class="meta">${escapeHtml(e.date)} ${escapeHtml(e.time)}${cat}</span> ${escapeHtml(e.text)}`;
+        recentEl.appendChild(li);
+      }
+    }
+
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      statusEl.textContent = "Saving...";
+
+      const payload = {
+        text: textEl.value,
+        category: categoryEl.value || null
+      };
+
+      try {
+        const res = await fetch("/log", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const msg = await res.text();
+          throw new Error(msg || "Failed to save");
+        }
+
+        textEl.value = "";
+        categoryEl.value = "";
+        statusEl.textContent = "Saved.";
+        await loadRecent();
+      } catch (err) {
+        statusEl.textContent = `Error: ${err.message}`;
+      }
+    });
+
+    loadRecent().catch(err => {
+      statusEl.textContent = `Error loading entries: ${err.message}`;
+    });
+  </script>
+</body>
+</html>
