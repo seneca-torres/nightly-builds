@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Victor Portfolio Theme Toggle Demo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #101522;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --border: #d1d5db;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1020;
+      --surface: #141b2f;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #27324b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 12%, transparent), transparent 40%), var(--bg);
+      color: var(--text);
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .card {
+      width: min(680px, 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+      transition: border-color 180ms ease, background-color 180ms ease;
+    }
+
+    h1 {
+      margin: 0 0 0.6rem;
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .controls {
+      margin-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 0.55rem 0.95rem;
+      font: inherit;
+      cursor: pointer;
+      transition: border-color 180ms ease, transform 120ms ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Victor's Portfolio Theme Toggle</h1>
+    <p>Standalone dark/light mode toggle that remembers your preference with localStorage.</p>
+    <div class="controls">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        Switch to dark mode
+      </button>
+      <span id="themeStatus" aria-live="polite"></span>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "victor-portfolio-theme";
+      var root = document.documentElement;
+      var toggle = document.getElementById("themeToggle");
+      var status = document.getElementById("themeStatus");
+
+      function applyTheme(theme) {
+        var isDark = theme === "dark";
+        root.setAttribute("data-theme", isDark ? "dark" : "light");
+        toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+        toggle.textContent = isDark ? "Switch to light mode" : "Switch to dark mode";
+        status.textContent = isDark ? "Dark mode is active" : "Light mode is active";
+      }
+
+      function getStartingTheme() {
+        var saved = localStorage.getItem(storageKey);
+        if (saved === "dark" || saved === "light") return saved;
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      function toggleTheme() {
+        var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        var next = current === "dark" ? "light" : "dark";
+        applyTheme(next);
+        localStorage.setItem(storageKey, next);
+      }
+
+      applyTheme(getStartingTheme());
+      toggle.addEventListener("click", toggleTheme);
+    })();
+  </script>
+</body>
+</html>
