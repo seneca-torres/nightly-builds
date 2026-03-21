@@ -1,0 +1,498 @@
+[
+  {
+    "address": null,
+    "beds_baths": "15509 N Scottsdale Rd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/imt-north-scottsdale/5k6FtR/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "7171 E Paradise Ln, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/modera-scottsdale/CjfDnY/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "10888 N 70th St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/del-sol/5Xrpfd/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "7111 E Tierra Buena Ln, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/soltra-kierland/CkB95R/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "14811 N Kierland Blvd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/modera-kierland/9Tcsqx/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "15345 N Scottsdale Rd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/broadstone-scottsdale-quarter/5k5yyh/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "17030 N 49th St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/calista/5XjqBM/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "10660 N 69th St #9838, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/apartments/scottsdale-az/phoenix-scottsdale/Cm356W/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "15501 N Scottsdale Rd #942, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/apartments/scottsdale-az/phoenix-scottsdale-north/CjM7gv/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "15826 N Scottsdale Rd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/the-quincy-at-kierland/CkBBXY/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "15608 N 71st St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/the-nines-at-kierland/5Xt9Gz/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "7140-7190 E Kierland Blvd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/optima-kierland-apartments/CnNyMY/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "16801 N 49th St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/tatum-place/5Xqyv6/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "16818 N 56th St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/mission-springs-at-scottsdale/5XhyQR/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "6980 E Sahuaro Dr, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/camden-san-paloma/5XhyLK/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "13220 N Scottsdale Rd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/manor-scottsdale/CkCNjj/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "15125 N Scottsdale Rd, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/vitri/CkBBXm/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "7170 E Tierra Buena Ln, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/overture-kierland-55+-apartment-homes/CmPdNQ/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "16810 N 62nd Pl, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/16810-N-62nd-Pl-Scottsdale-AZ-85254/8030805_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5820 E Evans Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5820-E-Evans-Dr-Scottsdale-AZ-85254/8027140_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "17414 N 56th Way, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/17414-N-56th-Way-Scottsdale-AZ-85254/8016015_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": null,
+    "beds_baths": "4850 E Desert Cove Ave, Scottsdale, AZ",
+    "link": "https://www.zillow.com/b/4850-e-desert-cove-ave-scottsdale-az-5Xk62P/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "7043 E Hearn Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/7043-E-Hearn-Rd-Scottsdale-AZ-85254/8024604_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4925 E Desert Cove Ave Unit 350, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/4925-E-Desert-Cove-Ave-UNIT-350-Scottsdale-AZ-85254/67803613_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "12210 N 67th St #23, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/12210-N-67th-St-23-Scottsdale-AZ-85254/455864464_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5128 E Coolbrook Ave, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5128-E-Coolbrook-Ave-Scottsdale-AZ-85254/2053601201_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5821 E Cactus Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5821-E-Cactus-Rd-Scottsdale-AZ-85254/7827745_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5725 E Monte Cristo Ave, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5725-E-Monte-Cristo-Ave-Scottsdale-AZ-85254/8022658_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "12201 N 58th Way #Id1068373p, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/12201-N-58th-Way-ID1068373P-Scottsdale-AZ-85254/450853790_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "7120 E Kierland Blvd Apt 205, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/7120-E-Kierland-Blvd-APT-205-Scottsdale-AZ-85254/300103383_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5046 E Columbine Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5046-E-Columbine-Dr-Scottsdale-AZ-85254/7824002_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6502 E Paradise Ln, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6502-E-Paradise-Ln-Scottsdale-AZ-85254/8023958_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6002 E Charter Oak Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6002-E-Charter-Oak-Rd-Scottsdale-AZ-85254/7822600_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "16407 N 50th St, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/16407-N-50th-St-Scottsdale-AZ-85254/8020638_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "7180 E Kierland Blvd #317, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/7180-E-Kierland-Blvd-317-Scottsdale-AZ-85254/2084168152_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4901 E Kelton Ln Unit 1268, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/4901-E-Kelton-Ln-UNIT-1268-Scottsdale-AZ-85254/8020371_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6762 E Grandview Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6762-E-Grandview-Dr-Scottsdale-AZ-85254/8023633_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6204 E Phelps Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6204-E-Phelps-Rd-Scottsdale-AZ-85254/8030809_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "16718 N 50th Way, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/16718-N-50th-Way-Scottsdale-AZ-85254/59266756_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6873 E Kathleen Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6873-E-Kathleen-Rd-Scottsdale-AZ-85254/8024331_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6243 E Pershing Ave #Id1039074p, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6243-E-Pershing-Ave-ID1039074P-Scottsdale-AZ-85254/452929218_zpid/",
+    "listing_date": "2026-01-30",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "Desert Horizon",
+    "beds_baths": "16636 N 58th St, Scottsdale, AZ",
+    "link": "https://www.zillow.com/apartments/scottsdale-az/desert-horizon/5XhyQf/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4925 E  Desert Cove Ave Unit 238",
+    "beds_baths": "4925 E Desert Cove Ave, Scottsdale, AZ",
+    "link": "https://www.zillow.com/b/tuscany-villas-condominium-scottsdale-az-5Xk5rS/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "15215 N Kierland Blvd Unit 733, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/15215-N-Kierland-Blvd-UNIT-733-Scottsdale-AZ-85254/88887248_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5623 E Claire Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5623-E-Claire-Dr-Scottsdale-AZ-85254/8026935_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6843 E Ludlow Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6843-E-Ludlow-Dr-Scottsdale-AZ-85254/8024759_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "10848 N 66th St, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/10848-N-66th-St-Scottsdale-AZ-85254/7864893_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "15826 N 52nd St, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/15826-N-52nd-St-Scottsdale-AZ-85254/8021055_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4810 E Helena Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/4810-E-Helena-Dr-Scottsdale-AZ-85254/2071980451_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6220 E Paradise Ln, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6220-E-Paradise-Ln-Scottsdale-AZ-85254/8030876_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5518 E Friess Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5518-E-Friess-Dr-Scottsdale-AZ-85254/79527996_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4864 E Village Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/4864-E-Village-Dr-Scottsdale-AZ-85254/2052846197_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "7009 E  Acoma Dr Unit 2126",
+    "beds_baths": "7009 E Acoma Dr, Scottsdale, AZ",
+    "link": "https://www.zillow.com/b/plaza-residences-scottsdale-az-5Xk4pk/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5513 E Terry Dr, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5513-E-Terry-Dr-Scottsdale-AZ-85254/8021580_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "5544 E Sandra Ter, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/5544-E-Sandra-Ter-Scottsdale-AZ-85254/8021788_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "4925 E Le Marche Ave, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/4925-E-Le-Marche-Ave-Scottsdale-AZ-85254/8021143_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "12602 N Scottsdale Rd, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/12602-N-Scottsdale-Rd-Scottsdale-AZ-85254/7868469_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "6126 E Juniper Ave, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/6126-E-Juniper-Ave-Scottsdale-AZ-85254/8023331_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "14201 N  70th Way # ID1496940P",
+    "beds_baths": "14201 N 70th Way, Scottsdale, AZ",
+    "link": "https://www.zillow.com/b/14201-n-70th-way-scottsdale-az-9Tcscr/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "12202 N 60th St #Id1023060p, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/12202-N-60th-St-ID1023060P-Scottsdale-AZ-85254/460865787_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "15232 N 49th St #Id1023320p, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/15232-N-49th-St-ID1023320P-Scottsdale-AZ-85254/460851959_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  },
+  {
+    "address": "16023 N 48th Pl, Scottsdale, AZ 85254",
+    "beds_baths": null,
+    "link": "https://www.zillow.com/homedetails/16023-N-48th-Pl-Scottsdale-AZ-85254/8021110_zpid/",
+    "listing_date": "2026-03-21",
+    "price": null,
+    "source": "zillow"
+  }
+]
