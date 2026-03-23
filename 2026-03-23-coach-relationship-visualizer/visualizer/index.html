@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach-School Relationship Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-project-diagram"></i> Coach-School Relationship Visualizer</h1>
+            <p class="subtitle">Discover hidden connections between coaches and schools across broadcaster notes</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="control-panel">
+                    <h3><i class="fas fa-sliders-h"></i> Controls</h3>
+                    
+                    <div class="control-group">
+                        <label for="search"><i class="fas fa-search"></i> Search</label>
+                        <input type="text" id="search" placeholder="Type coach or school name...">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label><i class="fas fa-filter"></i> Filters</label>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" id="show-coaches" checked> Coaches
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="show-schools" checked> Schools
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="year-range"><i class="fas fa-calendar-alt"></i> Year Range</label>
+                        <div class="range-container">
+                            <input type="range" id="year-range" min="2000" max="2026" value="2000" step="1">
+                            <div class="range-labels">
+                                <span id="min-year">2000</span>
+                                <span id="max-year">2026</span>
+                            </div>
+                        </div>
+                        <div class="selected-years">
+                            Showing: <span id="selected-year">2000-2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label><i class="fas fa-chart-bar"></i> Stats</label>
+                        <div class="stats" id="stats">
+                            <div>Loading...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label><i class="fas fa-mouse-pointer"></i> Selection</label>
+                        <div class="selection-info" id="selection-info">
+                            <div>Click a node to see details</div>
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="reset-view" class="btn"><i class="fas fa-sync-alt"></i> Reset View</button>
+                        <button id="export-json" class="btn"><i class="fas fa-download"></i> Export JSON</button>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h4><i class="fas fa-lightbulb"></i> How to Use</h4>
+                    <ul>
+                        <li><strong>Hover</strong> over nodes for details</li>
+                        <li><strong>Click</strong> a node to highlight connections</li>
+                        <li><strong>Drag</strong> nodes to rearrange</li>
+                        <li><strong>Use scroll</strong> to zoom in/out</li>
+                        <li><strong>Search</strong> for specific coaches or schools</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="visualization-area">
+                <div class="visualization-header">
+                    <h3><i class="fas fa-network-wired"></i> Relationship Graph</h3>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <span class="legend-color coach-color"></span> Coaches
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color school-color"></span> Schools
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-line"></span> Relationships
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="graph-container">
+                    <svg id="graph-svg"></svg>
+                    <div id="loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading graph data...</p>
+                    </div>
+                    <div id="no-data" class="no-data" style="display: none;">
+                        <i class="fas fa-database fa-3x"></i>
+                        <h3>No Graph Data Loaded</h3>
+                        <p>Run the parser first to generate graph data:</p>
+                        <code>python3 parser.py --demo</code>
+                    </div>
+                </div>
+                
+                <div class="details-panel" id="details-panel">
+                    <h3><i class="fas fa-info-circle"></i> Node Details</h3>
+                    <div id="node-details">
+                        <p>Select a node to see details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>
+                <i class="fas fa-code"></i> Part of the Broadcaster Notes Intelligence System | 
+                <i class="fas fa-calendar"></i> Generated: <span id="generated-date">Today</span> | 
+                <i class="fas fa-sitemap"></i> Nodes: <span id="node-count">0</span>, Edges: <span id="edge-count">0</span>
+            </p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

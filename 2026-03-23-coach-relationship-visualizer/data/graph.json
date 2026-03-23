@@ -1,0 +1,341 @@
+{
+  "nodes": [
+    {
+      "id": "coach_0",
+      "label": "Nick Saban",
+      "type": "coach",
+      "frequency": 3,
+      "size": 16
+    },
+    {
+      "id": "coach_1",
+      "label": "Kirby Smart",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_2",
+      "label": "Dabo Swinney",
+      "type": "coach",
+      "frequency": 1,
+      "size": 12
+    },
+    {
+      "id": "coach_3",
+      "label": "Lincoln Riley",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_4",
+      "label": "Dan Lanning",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_5",
+      "label": "Ryan Day",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_6",
+      "label": "Steve Sarkisian",
+      "type": "coach",
+      "frequency": 3,
+      "size": 16
+    },
+    {
+      "id": "coach_7",
+      "label": "Kalen DeBoer",
+      "type": "coach",
+      "frequency": 3,
+      "size": 16
+    },
+    {
+      "id": "coach_8",
+      "label": "Jim Harbaugh",
+      "type": "coach",
+      "frequency": 1,
+      "size": 12
+    },
+    {
+      "id": "coach_9",
+      "label": "Sherrone Moore",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_10",
+      "label": "Brent Venables",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "coach_11",
+      "label": "Mike Norvell",
+      "type": "coach",
+      "frequency": 2,
+      "size": 14
+    },
+    {
+      "id": "school_0",
+      "label": "Alabama",
+      "type": "school",
+      "frequency": 4,
+      "size": 27
+    },
+    {
+      "id": "school_1",
+      "label": "LSU",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_2",
+      "label": "Michigan State",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_3",
+      "label": "Georgia",
+      "type": "school",
+      "frequency": 2,
+      "size": 21
+    },
+    {
+      "id": "school_4",
+      "label": "Clemson",
+      "type": "school",
+      "frequency": 2,
+      "size": 21
+    },
+    {
+      "id": "school_5",
+      "label": "USC",
+      "type": "school",
+      "frequency": 2,
+      "size": 21
+    },
+    {
+      "id": "school_6",
+      "label": "Oklahoma",
+      "type": "school",
+      "frequency": 2,
+      "size": 21
+    },
+    {
+      "id": "school_7",
+      "label": "Oregon",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_8",
+      "label": "Ohio State",
+      "type": "school",
+      "frequency": 2,
+      "size": 21
+    },
+    {
+      "id": "school_9",
+      "label": "Texas",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_10",
+      "label": "Washington",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_11",
+      "label": "Fresno State",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_12",
+      "label": "Michigan",
+      "type": "school",
+      "frequency": 3,
+      "size": 24
+    },
+    {
+      "id": "school_13",
+      "label": "Florida State",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    },
+    {
+      "id": "school_14",
+      "label": "Memphis",
+      "type": "school",
+      "frequency": 1,
+      "size": 18
+    }
+  ],
+  "edges": [
+    {
+      "source": "coach_0",
+      "target": "school_0",
+      "date": "2007-2023",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_0",
+      "target": "school_1",
+      "date": "2000-2004",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_0",
+      "target": "school_2",
+      "date": "1995-1999",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_1",
+      "target": "school_3",
+      "date": "2016-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_1",
+      "target": "school_0",
+      "date": "2007-2015",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_2",
+      "target": "school_4",
+      "date": "2009-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_3",
+      "target": "school_5",
+      "date": "2022-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_3",
+      "target": "school_6",
+      "date": "2017-2021",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_4",
+      "target": "school_7",
+      "date": "2022-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_4",
+      "target": "school_3",
+      "date": "2019-2021",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_5",
+      "target": "school_8",
+      "date": "2019-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_6",
+      "target": "school_9",
+      "date": "2021-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_6",
+      "target": "school_0",
+      "date": "2019-2020",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_6",
+      "target": "school_5",
+      "date": "2014-2015",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_7",
+      "target": "school_0",
+      "date": "2024-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_7",
+      "target": "school_10",
+      "date": "2022-2023",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_7",
+      "target": "school_11",
+      "date": "2020-2021",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_8",
+      "target": "school_12",
+      "date": "2015-2023",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_9",
+      "target": "school_12",
+      "date": "2024-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_10",
+      "target": "school_6",
+      "date": "2022-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_10",
+      "target": "school_4",
+      "date": "2012-2021",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_11",
+      "target": "school_13",
+      "date": "2020-present",
+      "source_file": "demo_data"
+    },
+    {
+      "source": "coach_11",
+      "target": "school_14",
+      "date": "2016-2019",
+      "source_file": "demo_data"
+    }
+  ],
+  "metadata": {
+    "total_nodes": 27,
+    "total_edges": 23,
+    "total_coaches": 12,
+    "total_schools": 15,
+    "total_relationships": 25,
+    "generated_at": "2026-03-23T02:14:13.119542"
+  }
+}
