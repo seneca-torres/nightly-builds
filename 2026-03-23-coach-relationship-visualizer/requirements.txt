@@ -1,0 +1,4 @@
+# Python dependencies for Coach Relationship Visualizer
+
+# No external dependencies required!
+# The parser uses only standard library modules.

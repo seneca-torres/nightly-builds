@@ -1,0 +1,572 @@
+/* Coach-School Relationship Visualizer Styles */
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --coach-color: #3498db;
+    --school-color: #e67e22;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --border-color: #ddd;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+header h1 i {
+    color: var(--secondary-color);
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+}
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.visualization-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.control-panel {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.control-panel h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group {
+    margin-bottom: 25px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.control-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.checkbox:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.range-container {
+    margin-top: 10px;
+}
+
+.range-container input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.range-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.selected-years {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.stats, .selection-info {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stats div, .selection-info div {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.stats div:last-child, .selection-info div:last-child {
+    margin-bottom: 0;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#reset-view {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#reset-view:hover {
+    background-color: #1a252f;
+}
+
+#export-json {
+    background-color: #27ae60;
+    color: white;
+}
+
+#export-json:hover {
+    background-color: #229954;
+}
+
+.instructions {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.instructions h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions ul {
+    list-style-type: none;
+}
+
+.instructions li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.instructions li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.visualization-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.visualization-header h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.legend-line {
+    width: 24px;
+    height: 2px;
+    background-color: #95a5a6;
+    margin: 0 4px;
+}
+
+.coach-color {
+    background-color: var(--coach-color);
+}
+
+.school-color {
+    background-color: var(--school-color);
+}
+
+#graph-container {
+    flex: 1;
+    position: relative;
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+#graph-svg {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.loading, .no-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 10;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(52, 152, 219, 0.3);
+    border-top-color: var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.no-data i {
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+.no-data h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.no-data code {
+    background-color: #f1f2f6;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #2c3e50;
+}
+
+.details-panel {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.details-panel h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#node-details {
+    font-size: 0.95rem;
+}
+
+#node-details h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+#node-details p {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+#node-details ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#node-details li {
+    margin-bottom: 6px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#node-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer i {
+    color: var(--secondary-color);
+}
+
+/* Node styling */
+.node {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.node:hover {
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.node-text {
+    font-size: 12px;
+    font-weight: 600;
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
+.link {
+    stroke: #95a5a6;
+    stroke-opacity: 0.6;
+    stroke-width: 1.5;
+}
+
+.link-highlight {
+    stroke: var(--accent-color);
+    stroke-opacity: 1;
+    stroke-width: 3;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.7rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .visualization-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .legend {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    footer p {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 100;
+    max-width: 300px;
+    backdrop-filter: blur(5px);
+}
+
+.tooltip h4 {
+    margin: 0 0 5px 0;
+    color: var(--coach-color);
+}
+
+.tooltip p {
+    margin: 3px 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
