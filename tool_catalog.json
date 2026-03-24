@@ -1,0 +1,226 @@
+{
+  "generated": "2026-03-24T02:10:42.318944",
+  "count": 20,
+  "tools": [
+    {
+      "id": "2026-03-24-tool-catalog",
+      "name": "Tool Catalog",
+      "date": "2026-03-24",
+      "directory": "tool-catalog",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-03-24-tool-catalog",
+      "description": "A Python CLI tool that scans the `~/clawd/nightly-builds` directory and creates a searchable catalog of all tools built during nightly builds.",
+      "usage": "python3 tool-catalog.py usage \"calendar-quickadd\"",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-03-24-tool-catalog/tool-catalog.py",
+      "has_verification": true
+    },
+    {
+      "id": "2026-02-22-cfbd-games-today",
+      "name": "CFBD Games Today",
+      "date": "2026-02-22",
+      "directory": "cfbd-games-today",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-22-cfbd-games-today",
+      "description": "Simple Python CLI that fetches today's college football games from the College Football Data (CFBD) API and prints a formatted table.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-22-cfbd-games-today/cfbd_games_today.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-20-tweet-summarizer",
+      "name": "Tweet Summarizer",
+      "date": "2026-02-20",
+      "directory": "tweet-summarizer",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-20-tweet-summarizer",
+      "description": "A small Python CLI that fetches a tweet from the FxEmbed API (`api.fxtwitter.com`) and outputs a clean markdown summary.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-20-tweet-summarizer/tweet_summary.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-19-github-pr-status",
+      "name": "Github PR Status",
+      "date": "2026-02-19",
+      "directory": "github-pr-status",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-19-github-pr-status",
+      "description": "A lightweight CLI tool that lists open pull requests across a set of GitHub repositories and displays them as a markdown table (or plain text) with PR number, title, author, status checks, and link.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-19-github-pr-status/gh_pr_status.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-18-cfbd-staff-fetcher",
+      "name": "CFBD Staff Fetcher",
+      "date": "2026-02-18",
+      "directory": "cfbd-staff-fetcher",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-18-cfbd-staff-fetcher",
+      "description": "A Python CLI that pulls college football coaching staff data from the [College Football Data API](https://api.collegefootballdata.com) and exports clean reports ready for Obsidian, spreadsheets, or JS...",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-18-cfbd-staff-fetcher/cfbd_staff.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-17-config-diff-viewer",
+      "name": "Config Diff Viewer",
+      "date": "2026-02-17",
+      "directory": "config-diff-viewer",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-17-config-diff-viewer",
+      "description": "**Nightly Build \u2014 2026-02-17**",
+      "usage": "Usage:",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-17-config-diff-viewer/config_diff.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-16-daily-standup",
+      "name": "Daily Standup",
+      "date": "2026-02-16",
+      "directory": "daily-standup",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-16-daily-standup",
+      "description": "A tiny, dependency-free Python CLI that compiles Victor\u2019s daily standup from three local sources: memory notes, git activity, and cron job runs. It\u2019s built to be fast and predictable for morning brief...",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-16-daily-standup/standup.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-15-conversation-stats",
+      "name": "Conversation Stats",
+      "date": "2026-02-15",
+      "directory": "conversation-stats",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-15-conversation-stats",
+      "description": "A Python CLI tool that parses Clawdbot session JSONL files and generates fun analytics about your conversations.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-15-conversation-stats/conversation_stats.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-14-git-activity-report",
+      "name": "Git Activity Report",
+      "date": "2026-02-14",
+      "directory": "git-activity-report",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-14-git-activity-report",
+      "description": "A simple, production-ready Python CLI that scans `~/clawd` for Git repositories and generates a weekly activity report. It summarizes total commits, per-repository counts, commits grouped by day, auth...",
+      "usage": "- Alice <alice@example.com>: 3\n- Bob <bob@example.com>: 2",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-14-git-activity-report/git_activity_report.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-13-voice-note-summary",
+      "name": "Voice Note Summary",
+      "date": "2026-02-13",
+      "directory": "voice-note-summary",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-13-voice-note-summary",
+      "description": "A simple Python CLI that extracts voice message transcriptions from Clawdbot Telegram session JSONL files and archives them into daily Markdown logs. The goal: you can look back and see what you said ...",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-13-voice-note-summary/voice_note_summary.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-12-voice-note-transcriber",
+      "name": "Voice Note Transcriber",
+      "date": "2026-02-12",
+      "directory": "voice-note-transcriber",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-12-voice-note-transcriber",
+      "description": "This script transcribes voice notes with OpenAI Whisper and appends them to a daily markdown log in your Obsidian vault.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-12-voice-note-transcriber/transcribe_voice_notes.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-11-telegram-quick-replies",
+      "name": "Telegram Quick Replies",
+      "date": "2026-02-11",
+      "directory": "telegram-quick-replies",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-11-telegram-quick-replies",
+      "description": "Single-file Telegram bot + CLI that lets you define reusable **button templates** in YAML and use **one-tap** inline buttons for actions like **approve / reject / snooze**.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-11-telegram-quick-replies/telegram_quick_replies.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-09-2026-02-09",
+      "name": "2026 02 09",
+      "date": "2026-02-09",
+      "directory": "2026-02-09",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-09",
+      "description": "Automatically saves transcribed voice messages from Telegram and Signal to a daily log in your Obsidian vault.",
+      "usage": "Run with --help for usage",
+      "main_file": null,
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-08-2026-02-08",
+      "name": "2026 02 08",
+      "date": "2026-02-08",
+      "directory": "2026-02-08",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-08",
+      "description": "A small Telegram bot that posts an inline-button \u201cquick reply panel\u201d from a YAML config and **audit-logs every button click**.",
+      "usage": "Run with --help for usage",
+      "main_file": null,
+      "has_verification": false
+    },
+    {
+      "id": "2026-02-07-2026-02-07",
+      "name": "2026 02 07",
+      "date": "2026-02-07",
+      "directory": "2026-02-07",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-02-07",
+      "description": "A simple standalone HTML page that searches through markdown content provided by a JSON index.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-02-07/generate_index.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-01-31-epa-penalty-prototype",
+      "name": "EPA Penalty Prototype",
+      "date": "2026-01-31",
+      "directory": "epa-penalty-prototype",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-01-31/epa-penalty-prototype",
+      "description": "A visualization prototype showing how penalties impact a team's Expected Points Added (EPA) during a game.",
+      "usage": "Run with --help for usage",
+      "main_file": null,
+      "has_verification": false
+    },
+    {
+      "id": "2026-01-31-bot-launcher",
+      "name": "Bot Launcher",
+      "date": "2026-01-31",
+      "directory": "bot-launcher",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-01-31/bot-launcher",
+      "description": "This tool helps you quickly scaffold a new single-purpose Clawdbot bot instance with boilerplate, config and instructions.",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-01-31/bot-launcher/bot_launcher.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-01-30-2026-01-30",
+      "name": "2026 01 30",
+      "date": "2026-01-30",
+      "directory": "2026-01-30",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-01-30",
+      "description": "Rental Finder Agent",
+      "usage": "Uses argparse - run with --help for usage",
+      "main_file": "/Users/vicmacmini/clawd/nightly-builds/2026-01-30/rental_finder.py",
+      "has_verification": false
+    },
+    {
+      "id": "2026-01-29-2026-01-29",
+      "name": "2026 01 29",
+      "date": "2026-01-29",
+      "directory": "2026-01-29",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-01-29",
+      "description": "A clean, dark-themed dashboard for visualizing API usage costs.",
+      "usage": "Run with --help for usage",
+      "main_file": null,
+      "has_verification": false
+    },
+    {
+      "id": "2026-01-28-2026-01-28",
+      "name": "2026 01 28",
+      "date": "2026-01-28",
+      "directory": "2026-01-28",
+      "path": "/Users/vicmacmini/clawd/nightly-builds/2026-01-28",
+      "description": "Single-page dashboard showing cron jobs, service status, nightly build history, project inventory, and health metrics.",
+      "usage": "Run with --help for usage",
+      "main_file": null,
+      "has_verification": false
+    }
+  ]
+}
