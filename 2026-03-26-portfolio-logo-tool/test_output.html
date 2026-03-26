@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT Portfolio Logo Preview Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0f16;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #39d0ff, #63f5d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #9fb0c6;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .logo-card {
+            background: #131c2a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            border-color: #39d0ff;
+        }
+        
+        .logo-preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #0f1520;
+        }
+        
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-info {
+            padding: 20px;
+        }
+        
+        .logo-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+        
+        .logo-path {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85rem;
+            color: #9fb0c6;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+        
+        .logo-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-preview {
+            background: #1e293b;
+            color: #f8fafc;
+        }
+        
+        .btn-preview:hover {
+            background: #334155;
+        }
+        
+        .btn-primary {
+            background: #39d0ff;
+            color: #0a0f16;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background: #63f5d4;
+        }
+        
+        .instructions {
+            background: #131c2a;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            border-left: 4px solid #39d0ff;
+        }
+        
+        .instructions h2 {
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions code {
+            background: #0a0f16;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            color: #63f5d4;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            color: #9fb0c6;
+            font-size: 0.9rem;
+        }
+        
+        .selected {
+            border-color: #63f5d4;
+            box-shadow: 0 0 0 2px rgba(99, 245, 212, 0.2);
+        }
+        
+        .selection-info {
+            background: rgba(99, 245, 212, 0.1);
+            border: 1px solid #63f5d4;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .selection-info.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 VT Portfolio Logo Preview Tool</h1>
+            <p class="subtitle">
+... [truncated]
