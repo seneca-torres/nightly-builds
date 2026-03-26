@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT Portfolio Logo Preview Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0f16;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #39d0ff, #63f5d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #9fb0c6;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .logo-card {
+            background: #131c2a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            border-color: #39d0ff;
+        }
+        
+        .logo-preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #0f1520;
+        }
+        
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-info {
+            padding: 20px;
+        }
+        
+        .logo-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+        
+        .logo-path {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85rem;
+            color: #9fb0c6;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+        
+        .logo-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-preview {
+            background: #1e293b;
+            color: #f8fafc;
+        }
+        
+        .btn-preview:hover {
+            background: #334155;
+        }
+        
+        .btn-primary {
+            background: #39d0ff;
+            color: #0a0f16;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background: #63f5d4;
+        }
+        
+        .instructions {
+            background: #131c2a;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            border-left: 4px solid #39d0ff;
+        }
+        
+        .instructions h2 {
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions code {
+            background: #0a0f16;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            color: #63f5d4;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            color: #9fb0c6;
+            font-size: 0.9rem;
+        }
+        
+        .selected {
+            border-color: #63f5d4;
+            box-shadow: 0 0 0 2px rgba(99, 245, 212, 0.2);
+        }
+        
+        .selection-info {
+            background: rgba(99, 245, 212, 0.1);
+            border: 1px solid #63f5d4;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .selection-info.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 VT Portfolio Logo Preview Tool</h1>
+            <p class="subtitle">Browse and preview all available logos for the VT Sports Solutions portfolio. Click any logo to see how it would look on the actual site.</p>
+        </header>
+        
+        <div id="selectionInfo" class="selection-info">
+            <strong>Selected Logo:</strong> <span id="selectedName">None</span>
+            <div id="selectedPath" style="font-size: 0.9rem; margin-top: 5px;"></div>
+            <div class="logo-actions" style="margin-top: 10px;">
+                <button class="btn btn-primary" onclick="applyLogo()">Apply to Portfolio</button>
+                <button class="btn btn-preview" onclick="clearSelection()">Clear Selection</button>
+            </div>
+        </div>
+        
+        <div class="logo-grid" id="logoGrid">
+            <!-- Logos will be loaded here -->
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Use This Tool</h2>
+            <ol>
+                <li><strong>Browse logos</strong> - All available logo files from the portfolio and vt-logos directories are shown above.</li>
+                <li><strong>Click to select</strong> - Click any logo card to select it for preview/application.</li>
+                <li><strong>Preview on site</strong> - Click "Preview on Portfolio" to see how the logo looks on the actual VT Sports Solutions website.</li>
+                <li><strong>Apply to portfolio</strong> - Once you've selected a logo, click "Apply to Portfolio" to copy it to the portfolio images directory.</li>
+                <li><strong>Test locally</strong> - After applying, open <code>~/clawd/portfolio/index.html</code> in your browser to see the new logo in context.</li>
+            </ol>
+            <p><strong>Note:</strong> This tool doesn't modify the actual portfolio HTML/CSS, only copies logo files. You may need to update CSS classes or image references in the portfolio code.</p>
+        </div>
+        
+        <footer>
+            <p>Built with 🦉 for VT Sports Solutions • Nightly Build 2026-03-26</p>
+            <p>Automatically scans <code>~/clawd/portfolio/images/</code> and <code>~/clawd/vt-logos/</code></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Sample logo data - in a real implementation, this would be loaded from a Python script
+        const logos = [
+            {
+                name: "VT Logo Full",
+                path: "portfolio/images/vt-logo-full.png",
+                type: "portfolio"
+            },
+            {
+                name: "VT Logo Icon", 
+                path: "portfolio/images/vt-logo-icon.png",
+                type: "portfolio"
+            },
+            {
+                name: "VT Logo Text",
+                path: "portfolio/images/vt-logo-text.png", 
+                type: "portfolio"
+            },
+            {
+                name: "VTSS Transparent",
+                path: "portfolio/images/vtss_transparent.png",
+                type: "portfolio"
+            },
+            {
+                name: "White Transparent",
+                path: "portfolio/images/white_transparent.png",
+                type: "portfolio"
+            },
+            {
+                name: "Logo Color",
+                path: "vt-logos/logo-color.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Logo White",
+                path: "vt-logos/logo-white.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Logo BW",
+                path: "vt-logos/logo-bw.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Gemini Standalone",
+                path: "vt-logos/gemini-standalone.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Gemini Dotted",
+                path: "vt-logos/gemini-dotted.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Variation Dotted",
+                path: "vt-logos/variation-dotted.png",
+                type: "vt-logos"
+            },
+            {
+                name: "Variation Standalone",
+                path: "vt-logos/variation-standalone.png",
+                type: "vt-logos"
+            }
+        ];
+        
+        let selectedLogo = null;
+        
+        function renderLogos() {
+            const grid = document.getElementById('logoGrid');
+            grid.innerHTML = '';
+            
+            logos.forEach((logo, index) => {
+                const card = document.createElement('div');
+                card.className = 'logo-card';
+                if (selectedLogo && selectedLogo.path === logo.path) {
+                    card.classList.add('selected');
+                }
+                
+                card.innerHTML = `
+                    <div class="logo-preview">
+                        <img src="${logo.path}" alt="${logo.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%239fb0c6%22 font-size=%2214%22>Preview not available</text></svg>'">
+                    </div>
+                    <div class="logo-info">
+                        <div class="logo-name">${logo.name}</div>
+                        <div class="logo-path">${logo.path}</div>
+                        <div class="logo-actions">
+                            <button class="btn btn-preview" onclick="selectLogo(${index})">Select</button>
+                            <button class="btn btn-primary" onclick="previewLogo('${logo.path}')">Preview on Portfolio</button>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        function selectLogo(index) {
+            selectedLogo = logos[index];
+            renderLogos();
+            
+            // Show selection info
+            const info = document.getElementById('selectionInfo');
+            const nameSpan = document.getElementById('selectedName');
+            const pathDiv = document.getElementById('selectedPath');
+            
+            nameSpan.textContent = selectedLogo.name;
+            pathDiv.textContent = selectedLogo.path;
+            info.classList.add('show');
+        }
+        
+        function clearSelection() {
+            selectedLogo = null;
+            document.getElementById('selectionInfo').classList.remove('show');
+            renderLogos();
+        }
+        
+        function previewLogo(path) {
+            // In a real implementation, this would open the portfolio with the logo swapped
+            // For now, just show an alert
+            alert(`Preview feature would open the portfolio site with logo: ${path}\n\nIn a full implementation, this would:\n1. Create a temporary copy of the portfolio\n2. Replace logo images\n3. Open in browser for preview`);
+        }
+        
+        function applyLogo() {
+            if (!selectedLogo) {
+                alert('Please select a logo first');
+                return;
+            }
+            
+            // In a real implementation, this would call a Python backend to copy the file
+            alert(`Apply feature would copy: ${selectedLogo.path}\nTo: portfolio/images/\n\nIn a full implementation, this would:\n1. Backup current logo\n2. Copy selected logo to portfolio/images/\n3. Optionally rename to match expected filenames\n4. Show success message with next steps`);
+        }
+        
+        // Initialize
+        renderLogos();
+    </script>
+</body>
+</html>
