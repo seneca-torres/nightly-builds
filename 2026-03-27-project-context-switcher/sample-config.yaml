@@ -1,0 +1,99 @@
+# Sample project configurations for Victor's workflow
+# Copy to ~/.project_contexts.yaml and customize
+
+projects:
+  coach-db:
+    description: "Coach Database API and frontend"
+    root: "~/clawd/coach-database"
+    env:
+      DB_URL: "postgresql://localhost:5432/coachdb"
+      APP_ENV: "development"
+      FLY_API_TOKEN: "${FLY_API_TOKEN}"  # Use environment variable
+    files:
+      - "README.md"
+      - "docker-compose.yml"
+    commands:
+      - "git status"
+      - "docker-compose ps"
+    editor: "code"  # VS Code
+
+  nightly-builds:
+    description: "Nightly builds repository"
+    root: "~/clawd/nightly-builds"
+    env:
+      NIGHTLY_DIR: "~/clawd/nightly-builds"
+    files:
+      - "NIGHTLY-BUILDS.md"
+      - "README.md"
+    commands:
+      - "git status"
+    editor: "code"
+
+  portfolio:
+    description: "VT Sports Solutions portfolio site"
+    root: "~/clawd/portfolio"
+    env:
+      NODE_ENV: "development"
+    files:
+      - "index.html"
+      - "style.css"
+    commands:
+      - "open index.html"  # Opens in default browser on macOS
+    editor: "code"
+
+  opad:
+    description: "One Play A Day app"
+    root: "~/clawd/one-play-a-day-app"
+    env:
+      REACT_APP_API_URL: "http://localhost:3001"
+      NODE_ENV: "development"
+    files:
+      - "package.json"
+      - "README.md"
+    commands:
+      - "npm install"
+      - "npm start"
+    editor: "code"
+
+  cbb-bot:
+    description: "College basketball bot"
+    root: "~/clawd-cbb-bot"
+    env:
+      PYTHONPATH: "."
+      GOOGLE_APPLICATION_CREDENTIALS: "~/clawd-cbb-bot/config/service-account.json"
+    files:
+      - "README.md"
+      - "config/"
+    commands:
+      - "python3 -m venv venv"
+      - "source venv/bin/activate"
+    editor: "code"
+
+  # Quick contexts for common directories
+  clawd:
+    description: "Main Clawd workspace"
+    root: "~/clawd"
+    env:
+      CLAWD_HOME: "~/clawd"
+    files:
+      - "AGENTS.md"
+      - "SOUL.md"
+    commands:
+      - "git status"
+    editor: "code"
+
+  obsidian:
+    description: "Obsidian vault"
+    root: "~/obsidian-vault"
+    env:
+      OBSIDIAN_VAULT: "~/obsidian-vault"
+    files:
+      - "Seneca/"
+      - "Projects/"
+    editor: "code"
+
+# Default settings (applied to all projects unless overridden)
+defaults:
+  editor: "code"
+  commands:
+    - "git status"  # Always run git status on activation
