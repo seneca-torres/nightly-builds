@@ -1,0 +1,15 @@
+# Broadcaster Notes Web UI - Zero External Dependencies
+# This application uses only Python standard library and Flask (included in most Python installations)
+
+# If Flask is not installed, you can install it with:
+# pip install Flask
+
+# The application is designed to work with zero dependencies beyond Flask,
+# which is already included in most Python environments.
+
+# Core functionality uses only Python standard library:
+# - os, re, json, datetime, etc.
+# - Entity extraction uses static lists (no ML dependencies)
+
+# To install Flask (if needed):
+# pip install Flask==2.3.3
