@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Animations Demo</title>
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #09090b;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        h1, h2, h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #3b82f6;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .instructions {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #60a5fa;
+        }
+        
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        
+        .status.success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .status.info {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chalk-writing">Portfolio Animations Demo</h1>
+    
+    <div class="instructions">
+        <p>This demo shows all animations available in the enhancement package. Scroll down to see them in action.</p>
+    </div>
+    
+    <!-- Flip Card Demo -->
+    <section class="demo-section fade-in-up">
+        <h2>1. Flip Card Animation</h2>
+        <p>Project cards that flip to show more details. Hover and click to interact.</p>
+        
+        <div class="demo-grid">
+            <div class="flip-card" style="height: 300px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Spotting Grid Tool</h3>
+                        <p>A data-driven 0-99 grid for play-by-play commentators.</p>
+                        <div style="height: 120px; background: rgba(59, 130, 246, 0.2); border-radius: 8px; margin: 1rem 0;"></div>
+                        <button class="chalk-btn flip-btn">View Details</button>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Full Details</h3>
+                        <p>Built using team rosters, phonetic pronunciations, and special teams snap counts. Reduces on-air friction and helps broadcasters call plays with confidence.</p>
+                        <ul>
+                            <li>Player Analytics</li>
+                            <li>Snap Counts</li>
+                            <li>Broadcast Tools</li>
+                        </ul>
+                        <button class="chalk-btn close-btn">Back to Front</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card" style="height: 300px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Matchup Analytics</h3>
+                        <p>Custom matchup analysis for football broadcasters and teams.</p>
+                        <div style="height: 120px; background: rgba(16, 185, 129, 0.2); border-radius: 8px; margin: 1rem 0;"></div>
+                        <button class="chalk-btn flip-btn">View Details</button>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Full Details</h3>
+                        <p>Ingests a full season of play-by-play data for selected teams and compares them head-to-head. Supports specific questions about team performance in key situations.</p>
+                        <ul>
+                            <li>Football Analytics</li>
+                            <li>Matchup Analysis</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                        <button class="chalk-btn close-btn">Back to Front</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status info">
+            💡 <strong>Integration:</strong> Add <code>class="flip-card"</code> to project cards and include front/back divs.
+        </div>
+    </section>
+    
+    <!-- Scroll Animations Demo -->
+    <section class="demo-section fade-in-up">
+        <h2>2. Scroll Animations</h2>
+        <p>Elements fade in as you scroll down the page. Scroll to see these appear.</p>
+        
+        <div class="stagger-item" style="padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; margin: 1rem 0;">
+            <h3>First Item (appears first)</h3>
+            <p>This item has a slight delay before appearing.</p>
+        </div>
+        
+        <div class="stagger-item" style="padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; margin: 1rem 0;">
+            <h3>Second Item (appears second)</h3>
+            <p>Each staggered item appears with a slight delay.</p>
+        </div>
+        
+        <div class="stagger-item" style="padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; margin: 1rem 0;">
+            <h3>Third Item (appears third)</h3>
+            <p>Creating a smooth cascading effect.</p>
+        </div>
+        
+        <div class="status info">
+            💡 <strong>Integration:</strong> Add <code>class="fade-in-up"</code> to sections and <code>class="stagger-item"</code> to items in lists.
+        </div>
+    </section>
+    
+    <!-- Demo Player Demo -->
+    <section class="demo-section fade-in-up">
+        <h2>3. Demo Player Controls</h2>
+        <p>Play/pause controls for GIFs and videos. Hover over the demo to see controls.</p>
+        
+        <div class="demo-player" style="max-width: 600px; margin: 2rem auto;">
+            <!-- Simulated demo image -->
+            <div style="height: 300px; background: linear-gradient(45deg, #1e40af, #3b82f6); border-radius: 8px; position: relative;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎬</div>
+                    <p>Tool Demo GIF/Video</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button class="chalk-btn play-btn">▶ Play Demo</button>
+                <button class="chalk-btn pause-btn" style="display: none;">⏸ Pause</button>
+                <div style="flex: 1; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; margin: 0 1rem;">
+                    <div class="progress" style="width: 0%; height: 100%; background: #3b82f6; border-radius: 2px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status info">
+            💡 <strong>Integration:</strong> Wrap demo images in <code>class="demo-player"</code> and add control buttons.
+        </div>
+    </section>
+    
+    <!-- Chalkboard Effects Demo -->
+    <section class="demo-section fade-in-up">
+        <h2>4. Chalkboard Effects</h2>
+        <p>Chalk writing animations and loading spinners.</p>
+        
+        <div style="margin: 2rem 0;">
+            <h3 class="chalk-writing">Chalk Writing Effect</h3>
+            <p>This heading has a chalk writing animation when the page loads.</p>
+            
+            <div style="margin: 2rem 0; text-align: center;">
+                <h3>Loading Spinner</h3>
+                <div class="chalk-spinner" style="margin: 2rem auto;"></div>
+                <p>Use for loading states and async operations.</p>
+            </div>
+        </div>
+        
+        <div class="status info">
+            💡 <strong>Integration:</strong> Add <code>class="chalk-writing"</code> to headings and <code>class="chalk-spinner"</code> for loading indicators.
+        </div>
+    </section>
+    
+    <!-- Verification Status -->
+    <section class="demo-section fade-in-up" id="verification">
+        <h2>Verification Status</h2>
+        <div id="status-container">
+            <div class="status">Running tests...</div>
+        </div>
+    </section>
+    
+    <script src="animations.js"></script>
+    <script>
+        // Simple verification tests
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusContainer = document.getElementById('status-container');
+            const tests = [
+                { name: 'CSS Loaded', test: () => !!document.querySelector('style, link[rel="stylesheet"]') },
+                { name: 'JavaScript Loaded', test: () => typeof window.portfolioAnimations !== 'undefined' },
+                { name: 'Flip Cards Initialized', test: () => document.querySelectorAll('.flip-card').length > 0 },
+                { name: 'Demo Players Found', test: () => document.querySelectorAll('.demo-player').length > 0 },
+                { name: 'Scroll Animations Ready', test: () => document.querySelectorAll('.fade-in-up').length > 0 },
+                { name: 'Intersection Observer Supported', test: () => 'IntersectionObserver' in window },
+                { name: 'CSS Transforms Supported', test: () => 'transform' in document.documentElement.style }
+            ];
+            
+            let passed = 0;
+            statusContainer.innerHTML = '';
+            
+            tests.forEach(test => {
+                const div = document.createElement('div');
+                div.className = 'status';
+                
+                try {
+                    const result = test.test();
+                    if (result) {
+                        div.classList.add('success');
+                        div.innerHTML = `✅ ${test.name}`;
+                        passed++;
+                    } else {
+                        div.innerHTML = `❌ ${test.name} (failed)`;
+                    }
+                } catch (e) {
+                    div.innerHTML = `⚠️ ${test.name} (error: ${e.message})`;
+                }
+                
+                statusContainer.appendChild(div);
+            });
+            
+            // Add summary
+            const summary = document.createElement('div');
+            summary.className = 'status ' + (passed === tests.length ? 'success' : 'info');
+            summary.innerHTML = `📊 <strong>Summary:</strong> ${passed}/${tests.length} tests passed`;
+            statusContainer.appendChild(summary);
+            
+            // Initialize animations
+            if (window.portfolioAnimations) {
+                window.portfolioAnimations.init();
+                
+                // Simulate scroll to trigger animations
+                setTimeout(() => {
+                    document.querySelectorAll('.fade-in-up, .stagger-item').forEach(el => {
+                        el.classList.add('visible');
+                    });
+                }, 1000);
+            }
+        });
+        
+        // Demo player simulation
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('play-btn')) {
+                e.target.style.display = 'none';
+                const pauseBtn = e.target.parentNode.querySelector('.pause-btn');
+                if (pauseBtn) pauseBtn.style.display = 'block';
+                
+                // Simulate progress
+                const progress = e.target.parentNode.querySelector('.progress');
+                if (progress) {
+                    let width = 0;
+                    const interval = setInterval(() => {
+                        if (width >= 100) {
+                            clearInterval(interval);
+                            e.target.style.display = 'block';
+                            if (pauseBtn) pauseBtn.style.display = 'none';
+                            progress.style.width = '0%';
+                        } else {
+                            width += 2;
+                            progress.style.width = width + '%';
+                        }
+                    }, 100);
+                }
+            }
+            
+            if (e.target.classList.contains('pause-btn')) {
+                e.target.style.display = 'none';
+                const playBtn = e.target.parentNode.querySelector('.play-btn');
+                if (playBtn) playBtn.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
