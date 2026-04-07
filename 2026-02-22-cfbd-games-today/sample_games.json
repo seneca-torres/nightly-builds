@@ -1,0 +1,18 @@
+[
+  {
+    "start_date": "2025-09-01T23:30:00Z",
+    "away_team": "Ohio State",
+    "home_team": "Michigan",
+    "broadcast": "ABC",
+    "status": "scheduled",
+    "completed": false
+  },
+  {
+    "start_date": "2025-09-02T01:00:00Z",
+    "away_team": "Alabama",
+    "home_team": "Georgia",
+    "broadcast": "ESPN",
+    "status": "final",
+    "completed": true
+  }
+]

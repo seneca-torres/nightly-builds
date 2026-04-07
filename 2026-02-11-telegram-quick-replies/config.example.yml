@@ -1,0 +1,38 @@
+bot:
+  token: "PUT_YOUR_TELEGRAM_BOT_TOKEN_HERE"
+
+security:
+  # Optional allow-list. If empty or omitted, the bot will respond in any chat it can see.
+  # allowed_chat_ids: [123456789]
+  allowed_chat_ids: []
+
+# Telegram doesn't support colored buttons; "styles" are implemented as text prefixes.
+styles:
+  primary: "✅ "
+  danger: "❌ "
+  secondary: "⏸ "
+  neutral: ""
+
+templates:
+  approve_reject_snooze:
+    text: "Please review this request."
+    buttons:
+      - id: approve
+        text: "Approve"
+        style: primary
+        action:
+          type: message
+          text: "Approved by {user_first_name} (@{user_name})."
+      - id: reject
+        text: "Reject"
+        style: danger
+        action:
+          type: message
+          text: "Rejected by {user_first_name} (@{user_name})."
+      - id: snooze
+        text: "Snooze 1h"
+        style: secondary
+        action:
+          type: edit
+          text: "Snoozed by {user_first_name} at {now_iso}."
+
