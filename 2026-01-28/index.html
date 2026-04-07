@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Systems Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a1116;
+      --bg-2: #0f1a21;
+      --card: #111c23;
+      --muted: #93a4b3;
+      --text: #e6f1ff;
+      --accent: #35d0a6;
+      --yellow: #f7c948;
+      --red: #f66d6d;
+      --green: #3ddc97;
+      --line: #1f2c36;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, #122432 0%, transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, #132a33 0%, transparent 55%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 0 20px 40px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    section h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .status.green { color: var(--green); }
+    .status.green::before { background: var(--green); }
+    .status.yellow { color: var(--yellow); }
+    .status.yellow::before { background: var(--yellow); }
+    .status.red { color: var(--red); }
+    .status.red::before { background: var(--red); }
+    .status.gray { color: var(--muted); }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .list-item {
+      display: grid;
+      gap: 6px;
+      padding: 10px 12px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .list-item .title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 20px 16px 10px; }
+      main { padding: 0 16px 28px; }
+      section { padding: 14px; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">Systems Dashboard</div>
+    <div class="subtitle">
+      <span class="pill" id="last-updated">Loading...</span>
+      <span class="pill" id="auto-refresh">Auto-refresh: 60s</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Health Status <span class="tag">live</span></h2>
+      <div class="grid" id="health-grid"></div>
+    </section>
+
+    <section>
+      <h2>Running Services</h2>
+      <div class="grid" id="services-grid"></div>
+    </section>
+
+    <section>
+      <h2>Cron Jobs Status</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Schedule</th>
+              <th>Last Run</th>
+              <th>Status</th>
+              <th>Next Run</th>
+            </tr>
+          </thead>
+          <tbody id="cron-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Nightly Build History</h2>
+      <div class="list" id="nightly-list"></div>
+    </section>
+
+    <section>
+      <h2>Project Inventory</h2>
+      <div class="list" id="project-list"></div>
+    </section>
+  </main>
+
+  <script>
+    const indicatorClass = (value) => {
+      if (!value) return 'gray';
+      return value;
+    };
+
+    const renderHealth = (data) => {
+      const grid = document.getElementById('health-grid');
+      grid.innerHTML = '';
+
+      const health = data.health || {};
+      const indicators = data.health_indicators || {};
+
+      const disk = health.disk || {};
+      const mem = health.memory || {};
+
+      const cards = [
+        {
+          title: 'Disk Usage',
+          value: disk.use_percent !== undefined ? `${disk.use_percent}%` : 'n/a',
+          detail: disk.mount ? `${disk.used || ''} / ${disk.size || ''} on ${disk.mount}` : 'No disk data',
+          status: indicators.disk,
+        },
+        {
+          title: 'Memory Usage',
+          value: mem.used_percent !== undefined ? `${mem.used_percent}%` : 'n/a',
+          detail: mem.total_kb ? `${Math.round(mem.used_kb / 1024)}MB / ${Math.round(mem.total_kb / 1024)}MB used` : 'No memory data',
+          status: indicators.memory,
+        },
+        {
+          title: 'Swap Usage',
+          value: mem.swap_used_percent !== undefined ? `${mem.swap_used_percent}%` : 'n/a',
+          detail: mem.swap_total_kb ? `${Math.round(mem.swap_used_kb / 1024)}MB / ${Math.round(mem.swap_total_kb / 1024)}MB used` : 'No swap configured',
+          status: indicators.swap,
+        },
+        {
+          title: 'CPU Temp',
+          value: health.cpu_temp_c !== null && health.cpu_temp_c !== undefined ? `${health.cpu_temp_c}°C` : 'n/a',
+          detail: 'Thermal zone 0',
+          status: indicators.cpu_temp,
+        },
+      ];
+
+      cards.forEach((card) => {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div class="title-row">
+            <strong>${card.title}</strong>
+            <span class="status ${indicatorClass(card.status)}">${card.status || 'unknown'}</span>
+          </div>
+          <div class="mono">${card.value}</div>
+          <div class="muted">${card.detail}</div>
+        `;
+        grid.appendChild(el);
+      });
+    };
+
+    const renderServices = (data) => {
+      const grid = document.getElementById('services-grid');
+      grid.innerHTML = '';
+      const services = data.services || [];
+
+      services.forEach((svc) => {
+        const active = svc.active_state || 'unknown';
+        const stateClass = active === 'active' ? 'green' : active === 'inactive' ? 'yellow' : 'red';
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div class="title-row">
+            <strong>${svc.name}</strong>
+            <span class="status ${stateClass}">${active}</span>
+          </div>
+          <div class="muted">Substate: ${svc.sub_state || 'n/a'} • Unit: ${svc.unit_file_state || 'n/a'}</div>
+          <div class="muted">Last started: ${svc.last_started || 'n/a'}</div>
+        `;
+        grid.appendChild(el);
+      });
+    };
+
+    const renderCron = (data) => {
+      const body = document.getElementById('cron-body');
+      body.innerHTML = '';
+      const jobs = data.cron_jobs || [];
+
+      if (!jobs.length) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="5" class="empty">No cron jobs detected.</td>`;
+        body.appendChild(row);
+        return;
+      }
+
+      jobs.forEach((job) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>
+            <div><strong>${job.name}</strong></div>
+            <div class="muted mono">${job.source || ''}</div>
+          </td>
+          <td class="mono">${job.schedule}</td>
+          <td>${job.last_run_time || 'unknown'}</td>
+          <td>${job.last_status || 'unknown'}</td>
+          <td>${job.next_run || 'unknown'}</td>
+        `;
+        body.appendChild(row);
+      });
+    };
+
+    const renderNightly = (data) => {
+      const list = document.getElementById('nightly-list');
+      list.innerHTML = '';
+      const builds = data.nightly_builds_completed || [];
+
+      if (!builds.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty';
+        empty.textContent = 'No completed nightly builds logged yet.';
+        list.appendChild(empty);
+        return;
+      }
+
+      builds.forEach((item) => {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `<div class="mono">${item}</div>`;
+        list.appendChild(el);
+      });
+    };
+
+    const renderProjects = (data) => {
+      const list = document.getElementById('project-list');
+      list.innerHTML = '';
+      const projects = data.projects || [];
+
+      projects.forEach((project) => {
+        const state = project.exists ? (project.git_dirty ? 'dirty' : 'clean') : 'missing';
+        const badge = project.exists ? (project.git_dirty ? 'yellow' : 'green') : 'red';
+
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div class="title-row">
+            <strong>${project.name}</strong>
+            <span class="status ${badge}">${state}</span>
+          </div>
+          <div class="muted mono">${project.path}</div>
+          <div class="muted">Last modified: ${project.last_modified || 'n/a'} • Branch: ${project.git_branch || 'n/a'}</div>
+        `;
+        list.appendChild(el);
+      });
+    };
+
+    const render = (data) => {
+      document.getElementById('last-updated').textContent = `Updated: ${data.generated_at || 'unknown'}`;
+      renderHealth(data);
+      renderServices(data);
+      renderCron(data);
+      renderNightly(data);
+      renderProjects(data);
+    };
+
+    const fetchData = async () => {
+      const ts = Date.now();
+      let res;
+      try {
+        res = await fetch(`data.json?ts=${ts}`);
+        if (!res.ok) throw new Error('data.json unavailable');
+      } catch (err) {
+        res = await fetch(`data.sh?ts=${ts}`);
+      }
+      const data = await res.json();
+      render(data);
+    };
+
+    fetchData();
+    setInterval(fetchData, 60000);
+  </script>
+</body>
+</html>

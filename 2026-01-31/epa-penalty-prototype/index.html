@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Story: CFP National Championship</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1/dist/chartjs-plugin-annotation.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* Hero Header */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #334155;
+            margin-bottom: 32px;
+        }
+        .hero h1 { 
+            font-size: 2.5rem; 
+            color: #f8fafc; 
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #dc2626, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero .subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 20px; }
+        .score-final {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 1.5rem;
+        }
+        .team { text-align: center; }
+        .team-name { font-weight: 600; margin-bottom: 4px; }
+        .team-score { font-size: 3rem; font-weight: 800; }
+        .winner .team-score { color: #22c55e; }
+        .vs { color: #64748b; font-size: 1rem; }
+
+        /* Game in 5 Plays */
+        .story-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid #334155;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title .emoji { font-size: 2rem; }
+        
+        .key-plays {
+            display: grid;
+            gap: 20px;
+        }
+        .key-play {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 12px 16px;
+            border-left: 3px solid #3b82f6;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+        }
+        .key-play:hover {
+            transform: translateX(2px);
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.15);
+        }
+        .key-play.turning-point { border-left-color: #f59e0b; }
+        .key-play.momentum-shift { border-left-color: #8b5cf6; }
+        .key-play.back-breaker { border-left-color: #ef4444; }
+        .key-play.clutch { border-left-color: #22c55e; }
+        
+        .play-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+        .play-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        .turning-point .play-label { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .momentum-shift .play-label { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+        .back-breaker .play-label { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .clutch .play-label { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+        
+        .play-time {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        .play-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 2px;
+        }
+        .play-description {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .play-stats {
+            display: flex;
+            gap: 16px;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .stat {
+            text-align: center;
+            min-width: 50px;
+        }
+        .stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .stat-value.positive { color: #22c55e; }
+        .stat-value.negative { color: #ef4444; }
+        .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        
+        .watch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dc2626;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+            margin-top: 12px;
+        }
+        .watch-btn:hover { background: #b91c1c; }
+        
+        /* Win Probability Chart */
+        .chart-container {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        .chart-title { 
+            font-size: 1.25rem; 
+            color: #f8fafc; 
+            margin-bottom: 16px;
+        }
+        canvas { max-height: 300px; }
+        
+        .legend {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 16px;
+            font-size: 0.875rem;
+            flex-wrap: wrap;
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+        
+        /* Chapters */
+        .chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .chapter {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 3px solid #3b82f6;
+        }
+        .chapter-title {
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+        .chapter-summary {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+        .chapter-score {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Full Play List (Collapsible) */
+        .full-plays {
+            background: #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .plays-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .plays-header:hover { background: #334155; }
+        .plays-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .plays-content.open { max-height: 2000px; overflow-y: auto; }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #334155; }
+        th { background: #0f172a; color: #64748b; font-weight: 600; }
+        .highlight-row { background: rgba(59, 130, 246, 0.15); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.75rem; }
+            .team-score { font-size: 2rem; }
+            .key-play { padding: 16px; }
+            .play-stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🏈 CFP National Championship</h1>
+        <div class="subtitle">January 20, 2026 • Hard Rock Stadium • Miami Gardens, FL</div>
+        <div class="score-final">
+            <div class="team winner">
+                <div class="team-name">Indiana</div>
+                <div class="team-score">27</div>
+            </div>
+            <div class="vs">FINAL</div>
+            <div class="team">
+                <div class="team-name">Miami</div>
+                <div class="team-score">21</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Game in 5 Plays -->
+        <div class="story-section">
+            <div class="section-title">
+                <span class="emoji">📖</span>
+                Key Plays (15 Moments)
+            </div>
+            <div class="key-plays" id="key-plays"></div>
+        </div>
+
+        <!-- Quarter Chapters -->
+        <div class="chapters" id="chapters"></div>
+
+        <!-- Win Probability Chart -->
+        <div class="chart-container">
+            <div class="chart-title">Win Probability & EPA Flow</div>
+            <canvas id="mainChart"></canvas>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-dot" style="background:#dc2626"></div> Indiana Win Prob</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Miami Win Prob</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Key Moment</div>
+            </div>
+        </div>
+
+        <!-- Full Play List -->
+        <div class="full-plays">
+            <div class="plays-header" onclick="togglePlays()">
+                <span class="section-title" style="margin:0">📋 Full Play-by-Play</span>
+                <span id="toggle-icon">▼</span>
+            </div>
+            <div class="plays-content" id="plays-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Qtr</th>
+                            <th>Time</th>
+                            <th>Team</th>
+                            <th>Play</th>
+                            <th>EPA</th>
+                            <th>Win%</th>
+                            <th>Video</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plays-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // YouTube video base URL
+        const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=_P_nts46dU4';
+        
+        // Estimated quarter start times in the YouTube video (in seconds)
+        // These are approximate - broadcast typically runs 3-3.5x game time
+        const QUARTER_STARTS = {
+            1: 0,        // Start of video
+            2: 50 * 60,  // ~50 min in
+            3: 105 * 60, // ~1:45 in
+            4: 160 * 60  // ~2:40 in
+        };
+
+        // Function to estimate YouTube timestamp from game clock
+        function getYouTubeTimestamp(period, minutes, seconds) {
+            const quarterStart = QUARTER_STARTS[period] || 0;
+            // Each quarter is 15 min game time, roughly 45-50 min broadcast
+            // So ~3x multiplier from game clock to broadcast
+            const gameSecondsElapsed = (15 * 60) - (minutes * 60 + seconds);
+            const broadcastOffset = gameSecondsElapsed * 3; // 3x multiplier
+            const totalSeconds = Math.floor(quarterStart + broadcastOffset);
+            return totalSeconds;
+        }
+
+        function formatYouTubeUrl(seconds) {
+            return `${YOUTUBE_VIDEO}&t=${seconds}s`;
+        }
+
+        function formatTimestamp(seconds) {
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = seconds % 60;
+            if (h > 0) return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            return `${m}:${String(s).padStart(2,'0')}`;
+        }
+
+        // Process plays
+        const plays = PLAYS_RAW
+            .filter(p => p.ppa !== null && !['Timeout', 'End Period', 'End of Game'].includes(p.playType))
+            .sort((a, b) => {
+                if (a.period !== b.period) return a.period - b.period;
+                return ((b.clock?.minutes||0)*60 + (b.clock?.seconds||0)) - 
+                       ((a.clock?.minutes||0)*60 + (a.clock?.seconds||0));
+            })
+            .map((p, i) => ({
+                ...p,
+                playNum: i + 1,
+                timeStr: `${p.clock?.minutes || 0}:${String(p.clock?.seconds || 0).padStart(2, '0')}`,
+                youtubeTime: getYouTubeTimestamp(p.period, p.clock?.minutes || 0, p.clock?.seconds || 0)
+            }));
+
+        // Calculate win probability using actual scores from data
+        // Indiana was home team, Miami was away
+        plays.forEach((p, i) => {
+            // Get actual scores - offense/defense perspective varies by who has ball
+            let indScore, miaScore;
+            if (p.offense === 'Indiana') {
+                indScore = p.offenseScore || 0;
+                miaScore = p.defenseScore || 0;
+            } else {
+                miaScore = p.offenseScore || 0;
+                indScore = p.defenseScore || 0;
+            }
+            
+            p.indianaScore = indScore;
+            p.miamiScore = miaScore;
+            
+            // Win probability model
+            const scoreDiff = indScore - miaScore; // positive = Indiana leading
+            const totalMinutes = 60;
+            const minutesElapsed = (p.period - 1) * 15 + (15 - (p.clock?.minutes || 0));
+            const minutesRemaining = Math.max(1, totalMinutes - minutesElapsed);
+            
+            // Expected remaining variance decreases as game progresses
+            const expectedSwing = Math.sqrt(minutesRemaining) * 2.5;
+            
+            // Win probability using lead vs expected variance
+            const leadFactor = scoreDiff / Math.max(expectedSwing, 2);
+            let winProb = 0.5 + (leadFactor * 0.35);
+            
+            // Clamp between 2% and 98%
+            winProb = Math.max(0.02, Math.min(0.98, winProb));
+            
+            p.indianaWinProb = winProb;
+            p.miamiWinProb = 1 - winProb;
+            p.scoreDiff = scoreDiff;
+        });
+
+        // Calculate cumulative EPA
+        let indEPA = 0, miaEPA = 0;
+        plays.forEach(p => {
+            if (p.offense === 'Indiana') { indEPA += p.ppa; p.cumEPA = indEPA; }
+            else { miaEPA += p.ppa; p.cumEPA = miaEPA; }
+        });
+
+        // Find the 5 most impactful plays
+        function findKeyPlays() {
+            const scored = plays.map((p, i) => {
+                // Impact = |EPA| + win prob swing + scoring bonus
+                const wpSwing = i > 0 ? Math.abs(p.indianaWinProb - plays[i-1].indianaWinProb) : 0;
+                const scoringBonus = p.scoring ? 2 : 0;
+                const epaImpact = Math.abs(p.ppa);
+                return {
+                    ...p,
+                    impact: epaImpact * 2 + wpSwing * 10 + scoringBonus,
+                    wpSwing
+                };
+            });
+            
+            // Sort by impact and get top 5, ensuring variety across quarters
+            scored.sort((a, b) => b.impact - a.impact);
+            
+            const selected = [];
+            const quarters = new Set();
+            
+            for (const play of scored) {
+                if (selected.length >= 15) break;
+                selected.push(play);
+                quarters.add(play.period);
+            }
+            
+            // Sort chronologically
+            selected.sort((a, b) => a.playNum - b.playNum);
+            
+            // Assign labels based on characteristics
+            return selected.map((p, i) => {
+                let label = 'Key Play';
+                let className = '';
+                
+                if (p.scoring) { label = 'Scoring'; className = 'clutch'; }
+                else if (p.ppa > 3) { label = 'Big Gain'; className = 'clutch'; }
+                else if (p.ppa < -2) { label = 'Turnover/Loss'; className = 'back-breaker'; }
+                else if (p.wpSwing > 0.1) { label = 'Momentum'; className = 'momentum-shift'; }
+                else if (i === 0) { label = 'Opening'; className = ''; }
+                
+                return { ...p, label, className };
+            });
+        }
+
+        const keyPlays = findKeyPlays();
+
+        // Render key plays (compact)
+        document.getElementById('key-plays').innerHTML = keyPlays.map(p => `
+            <div class="key-play ${p.className}">
+                <div class="play-main">
+                    <div class="play-header">
+                        <span class="play-label">${p.label}</span>
+                        <span class="play-time">Q${p.period} ${p.timeStr}</span>
+                        <span style="color:#64748b">·</span>
+                        <span style="color:#f8fafc;font-weight:600">${p.offense}</span>
+                    </div>
+                    <div class="play-description">${p.playText || p.playType || 'Key play'}</div>
+                </div>
+                <div class="play-stats">
+                    <div class="stat">
+                        <div class="stat-value ${p.ppa >= 0 ? 'positive' : 'negative'}">${p.ppa > 0 ? '+' : ''}${p.ppa.toFixed(1)}</div>
+                        <div class="stat-label">EPA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${p.indianaScore}-${p.miamiScore}</div>
+                        <div class="stat-label">Score</div>
+                    </div>
+                    <a href="${formatYouTubeUrl(p.youtubeTime)}" target="_blank" class="watch-btn" style="margin:0;padding:8px 12px">▶</a>
+                </div>
+            </div>
+        `).join('');
+
+        // Render chapters
+        const quarters = [1, 2, 3, 4].map(q => {
+            const qPlays = plays.filter(p => p.period === q);
+            const lastPlay = qPlays[qPlays.length - 1];
+            const qEPA = {
+                indiana: qPlays.filter(p => p.offense === 'Indiana').reduce((s,p) => s + p.ppa, 0),
+                miami: qPlays.filter(p => p.offense === 'Miami').reduce((s,p) => s + p.ppa, 0)
+            };
+            const winner = qEPA.indiana > qEPA.miami ? 'Indiana' : 'Miami';
+            
+            const summaries = {
+                1: "Defensive chess match. Both teams feeling each other out.",
+                2: "Offenses find rhythm. Scoring picks up.",
+                3: "Momentum swings. The tide begins to turn.",
+                4: "Clutch time. Every play matters."
+            };
+            
+            return {
+                quarter: q,
+                summary: summaries[q],
+                winner,
+                score: lastPlay ? `${lastPlay.indianaScore}-${lastPlay.miamiScore}` : '0-0',
+                epa: qEPA
+            };
+        });
+
+        document.getElementById('chapters').innerHTML = quarters.map(q => `
+            <div class="chapter">
+                <div class="chapter-title">Q${q.quarter}: ${q.winner} Wins Quarter</div>
+                <div class="chapter-summary">${q.summary}</div>
+                <div class="chapter-score">
+                    Score: ${q.score} · EPA: IND ${q.epa.indiana > 0 ? '+' : ''}${q.epa.indiana.toFixed(1)} / MIA ${q.epa.miami > 0 ? '+' : ''}${q.epa.miami.toFixed(1)}
+                </div>
+            </div>
+        `).join('');
+
+        // Main Chart
+        const keyPlayIndices = keyPlays.map(p => p.playNum - 1);
+        
+        new Chart(document.getElementById('mainChart'), {
+            type: 'line',
+            data: {
+                labels: plays.map(p => `${p.playNum}`),
+                datasets: [
+                    {
+                        label: 'Indiana Win %',
+                        data: plays.map(p => p.indianaWinProb * 100),
+                        borderColor: '#dc2626',
+                        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: plays.map((p, i) => keyPlayIndices.includes(i) ? 8 : 2),
+                        pointBackgroundColor: plays.map((p, i) => 
+                            keyPlayIndices.includes(i) ? '#f59e0b' : '#dc2626'
+                        )
+                    },
+                    {
+                        label: 'Miami Win %',
+                        data: plays.map(p => p.miamiWinProb * 100),
+                        borderColor: '#22c55e',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: ctx => `Play ${ctx[0].label}`,
+                            afterBody: ctx => {
+                                const p = plays[ctx[0].dataIndex];
+                                return [
+                                    `Q${p.period} ${p.timeStr}`,
+                                    `${p.offense}: ${p.playType || 'Play'}`,
+                                    `Score: ${p.indianaScore}-${p.miamiScore}`
+                                ];
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            fiftyLine: {
+                                type: 'line',
+                                yMin: 50,
+                                yMax: 50,
+                                borderColor: '#64748b',
+                                borderWidth: 1,
+                                borderDash: [5, 5]
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 100,
+                        grid: { color: '#334155' },
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: v => v + '%'
+                        },
+                        title: { display: true, text: 'Win Probability', color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8', maxTicksLimit: 15 },
+                        title: { display: true, text: 'Play Number', color: '#94a3b8' }
+                    }
+                }
+            }
+        });
+
+        // Full play table
+        document.getElementById('plays-body').innerHTML = plays.map((p, i) => `
+            <tr class="${keyPlayIndices.includes(i) ? 'highlight-row' : ''}">
+                <td>${p.playNum}</td>
+                <td>Q${p.period}</td>
+                <td>${p.timeStr}</td>
+                <td>${p.offense}</td>
+                <td>${(p.playText || p.playType || '-').substring(0, 60)}${(p.playText?.length || 0) > 60 ? '...' : ''}</td>
+                <td style="color: ${p.ppa >= 0 ? '#22c55e' : '#ef4444'}">${p.ppa.toFixed(2)}</td>
+                <td>${Math.round(p.indianaWinProb * 100)}%</td>
+                <td><a href="${formatYouTubeUrl(p.youtubeTime)}" target="_blank" style="color:#3b82f6">▶</a></td>
+            </tr>
+        `).join('');
+
+        function togglePlays() {
+            const content = document.getElementById('plays-content');
+            const icon = document.getElementById('toggle-icon');
+            content.classList.toggle('open');
+            icon.textContent = content.classList.contains('open') ? '▲' : '▼';
+        }
+    </script>
+</body>
+</html>
