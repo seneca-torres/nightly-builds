@@ -1,0 +1,24 @@
+templates:
+  task_approval:
+    type: inline_keyboard
+    buttons:
+      - text: "Approve 👍"
+        action: approve_task
+      - text: "Reject ❌" 
+        action: reject_task
+      - text: "Snooze ⏰"
+        action: snooze_task
+
+  standard_replies:
+    type: quick_replies
+    replies:
+      - "Working on it 🛠️"
+      - "Need more details 🤔"
+      - "Completed ✅"
+
+  meeting_responses:
+    type: quick_replies
+    replies:
+      - "I'll be there 📅"
+      - "Running late 🏃‍♂️"
+      - "Can't make it 🚫"
