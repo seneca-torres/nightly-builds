@@ -1,0 +1,9 @@
+
+openai
+telethon
+python-telegram-bot
+signal-cli
+torch
+whisper
+python-dotenv
+

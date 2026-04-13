@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-01-28 08:17:20",
+  "cron_jobs": [
+    {
+      "name": "cd",
+      "schedule": "45 6,18 * * *",
+      "command": "cd /Users/vicmacmini/raspberry-pi-scripts && xvfb-run /Users/vicmacmini/raspberry-pi-scripts/venv/bin/python barttorvik_fetcher.py >> /Users/vicmacmini/logs/barttorvik.log 2>&1 && curl -fsS --retry 3 https://hc-ping.com/e50b4c5f-e4a7-41f1-b2cd-21650f237525 > /dev/null",
+      "user": null,
+      "source": "user:crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "cd",
+      "schedule": "0 19 * * *",
+      "command": "cd /Users/vicmacmini/raspberry-pi-scripts && venv/bin/python barttorvik_summary.py >> /Users/vicmacmini/logs/barttorvik_summary.log 2>&1",
+      "user": null,
+      "source": "user:crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "cd",
+      "schedule": "17 * * * *",
+      "command": "cd / && run-parts --report /etc/cron.hourly",
+      "user": "root",
+      "source": "/etc/crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "test",
+      "schedule": "25 6 * * *",
+      "command": "test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }",
+      "user": "root",
+      "source": "/etc/crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "test",
+      "schedule": "47 6 * * 7",
+      "command": "test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }",
+      "user": "root",
+      "source": "/etc/crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "test",
+      "schedule": "52 6 1 * *",
+      "command": "test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }",
+      "user": "root",
+      "source": "/etc/crontab",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "test",
+      "schedule": "30 3 * * 0",
+      "command": "test -e /run/systemd/system || SERVICE_MODE=1 /usr/libexec/e2fsprogs/e2scrub_all_cron",
+      "user": "root",
+      "source": "/etc/cron.d/e2scrub_all",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "test",
+      "schedule": "10 3 * * *",
+      "command": "test -e /run/systemd/system || SERVICE_MODE=1 /sbin/e2scrub_all -A -r",
+      "user": "root",
+      "source": "/etc/cron.d/e2scrub_all",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "\"",
+      "schedule": "22 4 * * 7",
+      "command": "PATH=\"$PATH:/usr/sbin:/usr/local/bin/\" pihole updateGravity >/var/log/pihole/pihole_updateGravity.log || cat /var/log/pihole/pihole_updateGravity.log",
+      "user": "root",
+      "source": "/etc/cron.d/pihole",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "\"",
+      "schedule": "00 00 * * *",
+      "command": "PATH=\"$PATH:/usr/sbin:/usr/local/bin/\" pihole flush once quiet",
+      "user": "root",
+      "source": "/etc/cron.d/pihole",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "logrotate",
+      "schedule": "@reboot",
+      "command": "/usr/sbin/logrotate --state /var/lib/logrotate/pihole /etc/pihole/logrotate",
+      "user": "root",
+      "source": "/etc/cron.d/pihole",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "\"",
+      "schedule": "10 15 * * *",
+      "command": "PATH=\"$PATH:/usr/sbin:/usr/local/bin/\" pihole updatechecker",
+      "user": "root",
+      "source": "/etc/cron.d/pihole",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    },
+    {
+      "name": "\"",
+      "schedule": "@reboot",
+      "command": "PATH=\"$PATH:/usr/sbin:/usr/local/bin/\" pihole updatechecker reboot",
+      "user": "root",
+      "source": "/etc/cron.d/pihole",
+      "last_run_time": null,
+      "last_status": "unknown",
+      "next_run": null
+    }
+  ],
+  "services": [
+    {
+      "name": "clawdbot-gateway",
+      "active_state": "inactive",
+      "sub_state": "dead",
+      "unit_file_state": "",
+      "last_started": "",
+      "exec_main_status": "0",
+      "result": "success"
+    },
+    {
+      "name": "clawdbot-shaq-diesel",
+      "active_state": "inactive",
+      "sub_state": "dead",
+      "unit_file_state": "",
+      "last_started": "",
+      "exec_main_status": "0",
+      "result": "success"
+    }
+  ],
+  "nightly_builds_completed": [],
+  "projects": [
+    {
+      "name": "one-play-a-day-app",
+      "path": "/Users/vicmacmini/clawd/one-play-a-day-app",
+      "exists": true,
+      "last_modified": "2026-01-27 11:02:37",
+      "git_branch": "production-site-v1",
+      "git_dirty": true
+    },
+    {
+      "name": "cai-strategy-app",
+      "path": "/Users/vicmacmini/clawd/cai-strategy-app",
+      "exists": true,
+      "last_modified": "2026-01-27 22:33:41",
+      "git_branch": "feature/all-week-charts",
+      "git_dirty": true
+    },
+    {
+      "name": "raspberry-pi-scripts",
+      "path": "/Users/vicmacmini/clawd/raspberry-pi-scripts",
+      "exists": false
+    }
+  ],
+  "health": {
+    "disk": {
+      "mount": "/",
+      "filesystem": "/dev/mmcblk0p2",
+      "size": "122599308",
+      "used": "17106292",
+      "available": "100433432",
+      "use_percent": 15
+    },
+    "memory": {
+      "total_kb": 8256528,
+      "used_kb": 2917744,
+      "available_kb": 5338784,
+      "used_percent": 35,
+      "swap_total_kb": 2097136,
+      "swap_used_kb": 132096,
+      "swap_used_percent": 6
+    },
+    "cpu_temp_c": 65.5
+  },
+  "health_indicators": {
+    "disk": "green",
+    "memory": "green",
+    "swap": "green",
+    "cpu_temp": "green"
+  }
+}
