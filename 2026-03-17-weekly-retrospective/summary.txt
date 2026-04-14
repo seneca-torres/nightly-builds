@@ -1,0 +1,18 @@
+✅ Nightly Build Complete: Weekly Retrospective CLI
+
+Built a Python CLI that generates weekly retrospective reports from daily memory files.
+
+Features:
+- Parses timestamped entries in ~/clawd/memory/daily/*.md
+- Categorizes by emoji (PR, Deployment, Decision, Suggestion, TODO, Note)
+- Deduplicates entries across days
+- Generates markdown report with summary, chronological events, decisions, PRs, deployments, suggestions, TODOs
+- Supports date ranges, verbose logging, demo mode, output file
+- Includes verification script
+
+PR: https://github.com/seneca-torres/nightly-builds/pull/30
+Location: ~/clawd/nightly-builds/2026-03-17-weekly-retrospective/
+
+Updated NIGHTLY-BUILDS.md (entry #36), added digest note, sent notification to updates channel.
+
+Verification passed: ./verify.sh succeeded, real data processed (135 entries -> 59 deduped).

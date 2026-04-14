@@ -1,0 +1,34 @@
+# Quick Reply System templates
+#
+# Notes:
+# - You can add new templates by appending to `templates`.
+# - Types supported out of the box: standard, approve_reject, snooze
+# - The bot reads this file on startup. Use /reload (admin-only) to reload.
+templates:
+  - id: std_thanks
+    type: standard
+    label: "Thanks"
+    message: "Thanks — we’ll get back to you shortly."
+
+  - id: ar_review
+    type: approve_reject
+    label: "Review decision"
+    approve:
+      label: "Approve"
+      message: "Approved."
+    reject:
+      label: "Reject"
+      message: "Rejected."
+
+  - id: snooze_followup
+    type: snooze
+    label: "Snooze follow‑up"
+    message_template: "Snoozed for {minutes} minutes."
+    options:
+      - label: "10m"
+        minutes: 10
+      - label: "1h"
+        minutes: 60
+      - label: "Tomorrow"
+        minutes: 1440
+
