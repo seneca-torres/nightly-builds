@@ -35,6 +35,7 @@ Notes
 
 DOC_URL_RE = re.compile(r"/document/(?:u/\d+/)?d/([A-Za-z0-9_-]+)")
 DOC_ID_RE = re.compile(r"^[A-Za-z0-9_-]{20,}$")
+GOG_TIMEOUT_SECONDS = 30
 
 
 class ConversionError(RuntimeError):
@@ -98,10 +99,15 @@ def run_gog_command(args: list[str]) -> str:
             check=True,
             capture_output=True,
             text=True,
+            timeout=GOG_TIMEOUT_SECONDS,
         )
     except FileNotFoundError as exc:
         raise ConversionError(
             "The 'gog' CLI is not installed or not on PATH. Install/authenticate gog first."
+        ) from exc
+    except subprocess.TimeoutExpired as exc:
+        raise ConversionError(
+            f"gog command timed out after {GOG_TIMEOUT_SECONDS} seconds: {' '.join(command)}"
         ) from exc
     except subprocess.CalledProcessError as exc:
         details = (exc.stderr or exc.stdout or "").strip()
