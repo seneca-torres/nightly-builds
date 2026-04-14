@@ -1,88 +1,122 @@
-# Google Docs to Markdown
+# Google Docs to Obsidian Markdown Converter
 
-`google_docs_to_markdown.py` is a zero-dependency Python CLI that converts a Google Doc into Obsidian-ready markdown with YAML frontmatter.
+A Python CLI tool that converts Google Docs to Obsidian‑ready markdown with YAML frontmatter, using the `gog` CLI for authentication and data fetching.
 
-It uses:
-
-- `gog docs info --json` for metadata
-- `gog docs cat` for plain text content
+Built as part of the Nightly Builds “Surprise Me” series, this tool serves as a pipeline step for the **Broadcaster Notes Intelligence System** half‑baked idea, enabling conversion of broadcaster notes (stored in Google Docs) into structured Obsidian markdown with entity detection and backlinking.
 
 ## Features
 
-- Accepts either a Google Doc ID or a full Google Docs URL
-- Emits YAML frontmatter with title, author, creation date, and modification date
-- Outputs plain text body content that works well in Obsidian
-- Includes `--demo` mode for offline smoke testing
-- Includes a verification script
-- Uses only the Python standard library
+- **Zero dependencies** – uses only the Python standard library and the already‑installed `gog` CLI.
+- **Flexible input** – accepts either a Google Doc ID or a full Google Docs URL.
+- **Rich metadata** – extracts title, creation/modification dates, author, and source URL via `gog docs info --json`.
+- **Plain‑text content** – fetches document body via `gog docs cat`.
+- **Demo mode** – generates a sample markdown document when the Google Docs API is not enabled or for offline testing.
+- **Verification script** – includes `verify.py` to validate the tool works as expected.
+- **Obsidian‑ready** – outputs YAML frontmatter compatible with Obsidian’s dataview plugin and standard markdown.
 
-## Requirements
+## Installation
 
-- Python 3.9+
-- `gog` installed and authenticated
-- Google Docs API access available to the `gog` OAuth project used on your machine
+No installation required – the tool is a single Python script.
 
-If `gog` returns a `403 accessNotConfigured` error, enable the Google Docs API for the underlying project and retry.
+**Prerequisites:**
+- Python 3.8+
+- [`gog` CLI](https://github.com/victorres11/gog) installed and authenticated (run `gog login` if needed).
+- Google Docs API enabled for your Google Cloud project (optional; demo mode works without it).
 
 ## Usage
 
-Print markdown to stdout from a raw doc ID:
+### Basic conversion
 
 ```bash
-python3 google_docs_to_markdown.py 1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
+python3 google_docs_to_markdown.py <doc-id-or-url>
 ```
 
-Print markdown to stdout from a Google Docs URL:
+Example with a Doc ID:
+```bash
+python3 google_docs_to_markdown.py 1a2b3c4d5e6f
+```
+
+Example with a Google Docs URL:
+```bash
+python3 google_docs_to_markdown.py "https://docs.google.com/document/d/1a2b3c4d5e6f/edit"
+```
+
+### Save to a file
 
 ```bash
-python3 google_docs_to_markdown.py "https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890/edit"
+python3 google_docs_to_markdown.py <doc-id> -o output.md
 ```
 
-Write the converted markdown to a file:
-
-```bash
-python3 google_docs_to_markdown.py 1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890 --output note.md
-```
-
-Run demo mode without calling `gog`:
+### Demo mode (no API needed)
 
 ```bash
 python3 google_docs_to_markdown.py --demo
 ```
 
-## Example output
+### Help
 
-```markdown
----
-title: "Demo Project Brief"
-google_doc_id: "1DemoDocIdAbCdEfGhIjKlMnOpQrStUvWxYz123456"
-google_doc_url: "https://docs.google.com/document/d/1DemoDocIdAbCdEfGhIjKlMnOpQrStUvWxYz123456/edit"
-author: "Alex Example"
-created: "2026-04-10T15:22:01Z"
-modified: "2026-04-13T08:45:19Z"
----
+```bash
+python3 google_docs_to_markdown.py --help
+```
 
-Project Brief
+## Integration with Broadcaster Notes Intelligence System
 
-Goal
-Ship the Google Docs to Markdown converter this week.
+This tool is designed as the first step in converting broadcaster notes (hundreds of Google Docs) into a searchable Obsidian vault.
+
+**Suggested pipeline:**
+1. **Fetch & convert** – Use this tool to download each Google Doc as markdown.
+2. **Entity extraction** – Run the existing `broadcaster_notes_entity_extractor.py` (2026‑02‑26) on the markdown files to detect coach names, school names, dates, and roles.
+3. **Backlinking** – Use the extracted entities to create Obsidian backlinks (`[[coach-name]]`, `[[school-name]]`).
+4. **Search & visualization** – Browse the resulting vault with Obsidian’s graph view, or use the Coach‑School Relationship Visualizer (2026‑03‑23) for interactive exploration.
+
+**Example workflow script (sketch):**
+```bash
+#!/bin/bash
+# convert_all.sh
+for doc_id in $(cat doc_ids.txt); do
+    python3 google_docs_to_markdown.py "$doc_id" -o "vault/${doc_id}.md"
+done
 ```
 
 ## Verification
 
-Run the included verification script:
+Run the included verification script to confirm the tool works:
 
 ```bash
-python3 verify_google_docs_to_markdown.py
+python3 verify.py
 ```
 
-The verification script checks:
+Expected output:
+```
+Running google_docs_to_markdown.py in demo mode...
+Output received, verifying...
+✅ Verification passed: All checks passed
+```
 
-- Demo mode output structure
-- `--output` file writing
-- Google Doc ID extraction from both IDs and URLs
+## Error Handling
 
-## Notes
+- **Missing `gog` CLI** – tool prints an error and exits.
+- **Google Docs API not enabled** – metadata fetch fails gracefully; the tool falls back to placeholder metadata (title “Document”, author “Unknown”) and continues with the content fetch.
+- **Invalid Doc ID / URL** – `gog` CLI returns an error; the tool prints the error and exits.
+- **Timeout** – commands are limited to 30 seconds; timeout results in an error message.
 
-- The tool preserves the plain text returned by `gog docs cat` rather than attempting additional markdown formatting.
-- Metadata field extraction is intentionally tolerant of multiple JSON shapes so it can handle future `gog` response variations.
+## Limitations
+
+- **Plain text only** – formatting (bold, italic, bullet lists, tables) is not preserved because `gog docs cat` returns plain text. Future versions could use `gog docs export --format html` and an HTML‑to‑Markdown converter.
+- **No authentication refresh** – relies on `gog` CLI’s existing token; if the token expires, the user must re‑authenticate with `gog login`.
+- **API enablement required** – for real metadata, the Google Docs API must be enabled in the Google Cloud project associated with the `gog` CLI credentials. Demo mode works without it.
+
+## Future Improvements
+
+- Add `--format html` option and integrate `html2text` for richer markdown conversion.
+- Batch processing mode for converting multiple documents at once.
+- Direct Obsidian vault integration (auto‑place files in vault, update index).
+- Integration with the existing Coach CRM to link coaches mentioned in notes to contact records.
+
+## Changelog
+
+- **2026‑04‑14** – Initial nightly build: basic CLI with demo mode, verification script, and README.
+
+---
+
+*Part of the Nightly Builds “Surprise Me” series. See [NIGHTLY‑BUILDS.md](https://github.com/seneca‑torres/nightly‑builds/blob/main/NIGHTLY‑BUILDS.md) for more.*
