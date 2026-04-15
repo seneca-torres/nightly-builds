@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Search</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0f14;
+        --panel: #0f1620;
+        --panel-2: #0c121b;
+        --text: #e6edf3;
+        --muted: #9aa7b2;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-2: rgba(255, 255, 255, 0.12);
+        --accent: #7aa2ff;
+        --danger: #ff6b6b;
+        --ok: #6ee7b7;
+        --hl: #fde047; /* yellow */
+        --hl-text: #111827;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        background: radial-gradient(1200px 600px at 20% 0%, rgba(122, 162, 255, 0.08), transparent 60%),
+          radial-gradient(900px 500px at 90% 20%, rgba(110, 231, 183, 0.06), transparent 55%), var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .app {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        height: 100vh;
+      }
+
+      .sidebar {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 25%), var(--panel-2);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        min-width: 260px;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .topbar {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 50%), var(--panel);
+        box-shadow: var(--shadow);
+        z-index: 10;
+      }
+
+      .title {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .title h1 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+      }
+
+      .pill {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 2px 8px;
+        border-radius: 999px;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .input {
+        position: relative;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-2);
+        background: rgba(0, 0, 0, 0.25);
+        color: var(--text);
+        outline: none;
+      }
+      input[type="text"]::placeholder {
+        color: rgba(154, 167, 178, 0.7);
+      }
+      input[type="text"]:focus {
+        border-color: rgba(122, 162, 255, 0.65);
+        box-shadow: 0 0 0 3px rgba(122, 162, 255, 0.16);
+      }
+
+      .btn {
+        border: 1px solid var(--border-2);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 13px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      label.chk {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      input[type="checkbox"] {
+        accent-color: var(--accent);
+      }
+
+      .sidebar-header {
+        padding: 14px 14px 10px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .sidebar-header .label {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .sidebar-header .label strong {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .sidebar-header .label span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .file-list {
+        padding: 10px;
+        overflow: auto;
+        flex: 1;
+      }
+
+      .file-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 10px 10px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+      .file-item:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: var(--border);
+      }
+      .file-item.active {
+        background: rgba(122, 162, 255, 0.08);
+        border-color: rgba(122, 162, 255, 0.35);
+      }
+
+      .file-item .name {
+        font-size: 13px;
+        color: var(--text);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .file-item .path {
+        font-size: 12px;
+        color: var(--muted);
+        font-family: var(--mono);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .content {
+        padding: 14px 16px 20px;
+        overflow: auto;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .status {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.22);
+        margin-bottom: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .status .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--muted);
+      }
+      .status.ok .dot {
+        background: var(--ok);
+      }
+      .status.err .dot {
+        background: var(--danger);
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .file-result {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.02);
+        overflow: hidden;
+      }
+
+      .file-result-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 12px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.18);
+      }
+
+      .file-result-header .left {
+        min-width: 0;
+      }
+
+      .file-result-header .file {
+        font-size: 13px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .file-result-header .meta {
+        margin-top: 2px;
+        font-size: 12px;
+        color: var(--muted);
+        font-family: var(--mono);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .count {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 4px 8px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      .matches {
+        padding: 12px 12px 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .match {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+      }
+
+      .match .lines {
+        padding: 10px 12px;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
+
+      .line {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        gap: 10px;
+        padding: 2px 0;
+      }
+
+      .lineno {
+        color: rgba(154, 167, 178, 0.75);
+        text-align: right;
+        user-select: none;
+      }
+
+      .text {
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      mark.hl {
+        background: var(--hl);
+        color: var(--hl-text);
+        padding: 0 2px;
+        border-radius: 4px;
+      }
+
+      details.full {
+        margin: 0 12px 12px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        overflow: hidden;
+      }
+      details.full > summary {
+        cursor: pointer;
+        padding: 10px 12px;
+        list-style: none;
+        user-select: none;
+        border-bottom: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.18);
+        font-size: 13px;
+        color: var(--muted);
+      }
+      details.full > summary::-webkit-details-marker {
+        display: none;
+      }
+      .full pre {
+        margin: 0;
+        padding: 12px;
+        overflow: auto;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        line-height: 1.55;
+        background: transparent;
+      }
+
+      .empty {
+        border: 1px dashed rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        padding: 18px 16px;
+        color: var(--muted);
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .empty strong {
+        color: var(--text);
+      }
+
+      @media (max-width: 900px) {
+        .app {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          height: 220px;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="label">
+            <strong>Files</strong>
+            <span id="fileCount">—</span>
+          </div>
+          <button class="btn" id="clearSelectionBtn" title="Clear selected file">Clear</button>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </aside>
+
+      <main class="main">
+        <div class="topbar">
+          <div class="title">
+            <h1>Memory Search</h1>
+            <span class="pill" id="indexSourcePill">Loading…</span>
+          </div>
+          <div class="controls">
+            <div class="input">
+              <input
+                id="queryInput"
+                type="text"
+                placeholder='Search (e.g. "seneca", "embedding", "TODO")'
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+            <label class="chk" title="Only search within the selected file">
+              <input id="selectedOnlyChk" type="checkbox" />
+              Selected only
+            </label>
+            <button class="btn" id="resetBtn" title="Clear query">Reset</button>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="status" id="statusBar">
+            <span class="dot"></span>
+            <span id="statusText">Loading index…</span>
+          </div>
+          <div class="results" id="results"></div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const INDEX_URL = "memory_index.json";
+      const MAX_MATCHES_TOTAL = 500;
+      const MAX_MATCHES_PER_FILE = 80;
+      const CONTEXT_BEFORE = 2;
+      const CONTEXT_AFTER = 3;
+
+      // Demo data for static-only environments (mimics the JSON structure generated by generate_index.py).
+      const DEMO_INDEX = {
+        generated_at: "2026-02-07T00:00:00Z",
+        root: "~/clawd/memory",
+        files: [
+          {
+            path: "notes/seneca-dashboard.md",
+            name: "seneca-dashboard.md",
+            content:
+              "# Seneca dashboards\n\n" +
+              "- Dark theme defaults\n" +
+              "- Fast search over memory\n\n" +
+              "## TODO\n" +
+              "- Add memory index generator\n" +
+              "- Highlight keywords in results\n\n" +
+              "Seneca UI patterns: panels, subtle borders, and bright accent.\n",
+          },
+          {
+            path: "research/embeddings.md",
+            name: "embeddings.md",
+            content:
+              "# Embeddings\n\n" +
+              "We can store an embedding per memory file and do semantic search.\n" +
+              "But for a simple demo, substring search over markdown is enough.\n\n" +
+              "## Notes\n" +
+              "- Use a JSON index for static hosting.\n" +
+              "- Include context lines around each match.\n",
+          },
+          {
+            path: "logs/2026-02-07.md",
+            name: "2026-02-07.md",
+            content:
+              "# Daily Log (2026-02-07)\n\n" +
+              "Worked on a Memory Search UI. Needs:\n" +
+              "- file browser panel\n" +
+              "- results panel\n" +
+              "- keyword highlight (yellow)\n\n" +
+              "Demo should work without backend.\n",
+          },
+        ],
+      };
+
+      const els = {
+        fileList: document.getElementById("fileList"),
+        fileCount: document.getElementById("fileCount"),
+        clearSelectionBtn: document.getElementById("clearSelectionBtn"),
+        queryInput: document.getElementById("queryInput"),
+        selectedOnlyChk: document.getElementById("selectedOnlyChk"),
+        resetBtn: document.getElementById("resetBtn"),
+        results: document.getElementById("results"),
+        statusBar: document.getElementById("statusBar"),
+        statusText: document.getElementById("statusText"),
+        indexSourcePill: document.getElementById("indexSourcePill"),
+      };
+
+      let indexData = null;
+      let selectedPath = null;
+      let lastQuery = "";
+      let debounceTimer = null;
+
+      function escapeHtml(s) {
+        return (s ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function setStatus(kind, text) {
+        els.statusBar.classList.remove("ok", "err");
+        if (kind) els.statusBar.classList.add(kind);
+        els.statusText.textContent = text;
+      }
+
+      function fmtCount(n, label) {
+        return `${n.toLocaleString()} ${label}${n === 1 ? "" : "s"}`;
+      }
+
+      function normalizeQuery(q) {
+        return (q ?? "").trim();
+      }
+
+      function highlightText(text, query) {
+        if (!query) return escapeHtml(text);
+        const hay = text ?? "";
+        const needle = query.toLowerCase();
+        const lower = hay.toLowerCase();
+        let out = "";
+        let i = 0;
+        while (true) {
+          const idx = lower.indexOf(needle, i);
+          if (idx === -1) break;
+          out += escapeHtml(hay.slice(i, idx));
+          out += `<mark class="hl">${escapeHtml(hay.slice(idx, idx + query.length))}</mark>`;
+          i = idx + query.length;
+        }
+        out += escapeHtml(hay.slice(i));
+        return out;
+      }
+
+      function renderFileList() {
+        const files = (indexData?.files ?? []).slice().sort((a, b) => (a.path || "").localeCompare(b.path || ""));
+        els.fileCount.textContent = fmtCount(files.length, "file");
+
+        els.fileList.innerHTML = files
+          .map((f) => {
+            const active = f.path === selectedPath ? "active" : "";
+            return `
+              <div class="file-item ${active}" data-path="${escapeHtml(f.path)}" title="${escapeHtml(f.path)}">
+                <div class="name">${escapeHtml(f.name || f.path.split("/").pop())}</div>
+                <div class="path">${escapeHtml(f.path)}</div>
+              </div>
+            `;
+          })
+          .join("");
+
+        els.fileList.querySelectorAll(".file-item").forEach((node) => {
+          node.addEventListener("click", () => {
+            selectedPath = node.getAttribute("data-path");
+            renderFileList();
+            renderResults(normalizeQuery(els.queryInput.value));
+          });
+        });
+      }
+
+      function getActiveFiles() {
+        const files = indexData?.files ?? [];
+        if (els.selectedOnlyChk.checked && selectedPath) {
+          return files.filter((f) => f.path === selectedPath);
+        }
+        return files;
+      }
+
+      function searchIndex(query) {
+        const files = getActiveFiles();
+        const q = query.toLowerCase();
+        let totalMatches = 0;
+
+        const results = [];
+        for (const file of files) {
+          if (totalMatches >= MAX_MATCHES_TOTAL) break;
+          const content = file.content ?? "";
+          if (!content) continue;
+          const lines = content.split(/\r?\n/);
+          const matches = [];
+
+          for (let i = 0; i < lines.length; i++) {
+            if (matches.length >= MAX_MATCHES_PER_FILE) break;
+            const line = lines[i] ?? "";
+            if (line.toLowerCase().includes(q)) {
+              const start = Math.max(0, i - CONTEXT_BEFORE);
+              const end = Math.min(lines.length - 1, i + CONTEXT_AFTER);
+              const ctx = [];
+              for (let j = start; j <= end; j++) {
+                ctx.push({
+                  lineNumber: j + 1,
+                  text: lines[j] ?? "",
+                  isHit: j === i,
+                });
+              }
+              matches.push({ hitLine: i + 1, context: ctx });
+              totalMatches++;
+            }
+          }
+
+          if (matches.length) {
+            results.push({
+              path: file.path,
+              name: file.name || file.path.split("/").pop(),
+              content,
+              matches,
+            });
+          }
+        }
+
+        return { results, totalMatches, truncated: totalMatches >= MAX_MATCHES_TOTAL };
+      }
+
+      function renderEmptyState() {
+        const selectedLabel = selectedPath ? `Selected file: <span class="pill">${escapeHtml(selectedPath)}</span>` : "";
+        els.results.innerHTML = `
+          <div class="empty">
+            <div><strong>Type to search</strong> across markdown content.</div>
+            <div style="margin-top:8px; line-height:1.6;">
+              - Click a file on the left to focus.<br />
+              - Enable <strong>Selected only</strong> to search within it.<br />
+              - Full file content is expandable per result.
+            </div>
+            <div style="margin-top:10px; color: var(--muted);">${selectedLabel}</div>
+          </div>
+        `;
+      }
+
+      function renderResults(query) {
+        lastQuery = query;
+        if (!indexData) return;
+
+        const files = getActiveFiles();
+        if (!query) {
+          setStatus("ok", `Loaded ${fmtCount(indexData.files.length, "file")}.`);
+          if (!files.length) {
+            els.results.innerHTML = `<div class="empty"><strong>No files</strong> in the index.</div>`;
+          } else {
+            renderEmptyState();
+          }
+          return;
+        }
+
+        const { results, totalMatches, truncated } = searchIndex(query);
+        const inScope =
+          els.selectedOnlyChk.checked && selectedPath
+            ? ` in 1 selected file`
+            : ` in ${files.length.toLocaleString()} file${files.length === 1 ? "" : "s"}`;
+
+        const truncMsg = truncated ? ` (truncated at ${MAX_MATCHES_TOTAL.toLocaleString()} matches)` : "";
+        setStatus("ok", `Found ${fmtCount(totalMatches, "match")}${inScope}${truncMsg}.`);
+
+        if (!results.length) {
+          els.results.innerHTML = `<div class="empty"><strong>No matches</strong> for “${escapeHtml(query)}”.</div>`;
+          return;
+        }
+
+        els.results.innerHTML = results
+          .map((r) => {
+            const matchCount = r.matches.length;
+            const matchesHtml = r.matches
+              .map((m) => {
+                const linesHtml = m.context
+                  .map((c) => {
+                    const lineHtml = highlightText(c.text, query);
+                    const emphasis = c.isHit ? ' style="color: var(--text);"' : "";
+                    return `
+                      <div class="line">
+                        <div class="lineno">${c.lineNumber}</div>
+                        <div class="text"${emphasis}>${lineHtml}</div>
+                      </div>
+                    `;
+                  })
+                  .join("");
+                return `
+                  <div class="match">
+                    <div class="lines">${linesHtml}</div>
+                  </div>
+                `;
+              })
+              .join("");
+
+            // Full file content is always available via <details>.
+            const fullContent = escapeHtml(r.content);
+            return `
+              <section class="file-result" data-path="${escapeHtml(r.path)}">
+                <div class="file-result-header">
+                  <div class="left">
+                    <div class="file">${escapeHtml(r.name)}</div>
+                    <div class="meta">${escapeHtml(r.path)}</div>
+                  </div>
+                  <div class="count">${fmtCount(matchCount, "hit")}</div>
+                </div>
+                <div class="matches">${matchesHtml}</div>
+                <details class="full">
+                  <summary>Expand full file</summary>
+                  <pre><code>${fullContent}</code></pre>
+                </details>
+              </section>
+            `;
+          })
+          .join("");
+      }
+
+      async function loadIndex() {
+        try {
+          const res = await fetch(INDEX_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data || !Array.isArray(data.files)) throw new Error("Invalid index format");
+          indexData = data;
+          els.indexSourcePill.textContent = `Index: ${INDEX_URL}`;
+          setStatus("ok", `Loaded ${fmtCount(indexData.files.length, "file")} from ${INDEX_URL}.`);
+        } catch (err) {
+          indexData = DEMO_INDEX;
+          els.indexSourcePill.textContent = "Demo data";
+          setStatus("err", `Could not load ${INDEX_URL}; using demo data.`);
+        }
+        renderFileList();
+        renderResults(normalizeQuery(els.queryInput.value));
+      }
+
+      function wireEvents() {
+        els.resetBtn.addEventListener("click", () => {
+          els.queryInput.value = "";
+          renderResults("");
+          els.queryInput.focus();
+        });
+
+        els.clearSelectionBtn.addEventListener("click", () => {
+          selectedPath = null;
+          renderFileList();
+          renderResults(normalizeQuery(els.queryInput.value));
+        });
+
+        els.selectedOnlyChk.addEventListener("change", () => {
+          renderResults(normalizeQuery(els.queryInput.value));
+        });
+
+        els.queryInput.addEventListener("input", () => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => renderResults(normalizeQuery(els.queryInput.value)), 120);
+        });
+
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            // ESC clears query; if already empty, clears selection.
+            if (els.queryInput.value.trim()) {
+              els.queryInput.value = "";
+              renderResults("");
+            } else if (selectedPath) {
+              selectedPath = null;
+              renderFileList();
+              renderResults("");
+            }
+          }
+        });
+      }
+
+      wireEvents();
+      loadIndex();
+    </script>
+  </body>
+</html>
